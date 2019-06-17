@@ -1,0 +1,134 @@
+GO
+
+ALTER PROCEDURE [dbo].[sp_Member_GetAll]
+(@MemberCode bigint = null, @Status bit = null,@EmployeeNumber int=null,@Companycode int=null,
+ @Staff INT=0,@Worker INT=0,@Other INT=0, @AsonDate Datetime=null)
+AS
+delete From tbl_MemberReport 
+if @Staff =1
+BEGIN
+	insert into tbl_MemberReport
+	SELECT     MemberCode, Number, EmployeeNumber, TDOpening,ShareOpening, CONVERT(varchar, EmployeeNumber) AS strEmpNo, MemberName,MemberName_Tamil,MemberType, Status,
+	Photo_Image,Address1,Address2,Address3,Address4,Address_Tamil1,Address_Tamil2,Address_Tamil3,Address_Tamil4,MobileNo
+	FROM         tbl_Member
+	WHERE   MemberCode = ISNULL(@MemberCode,MemberCode) AND Status = ISNULL(@Status,Status) AND EmployeeNumber=isnull(@EmployeeNumber,EmployeeNumber)
+	and membercode not in (select MemberCode from tbl_shareClossing where ShareClossingDate<=isnull(@AsonDate,ShareClossingDate) )
+	and (MemberType='STAFF')
+	ORDER BY MEMBERCODE
+END
+
+if @WORKER =1
+BEGIN
+	insert into tbl_MemberReport
+	SELECT     MemberCode, Number, EmployeeNumber, TDOpening,ShareOpening, CONVERT(varchar, EmployeeNumber) AS strEmpNo, MemberName,MemberName_Tamil,MemberType, Status,
+	Photo_Image,Address1,Address2,Address3,Address4,Address_Tamil1,Address_Tamil2,Address_Tamil3,Address_Tamil4,MobileNo
+	FROM         tbl_Member
+	WHERE   MemberCode = ISNULL(@MemberCode,MemberCode) AND Status = ISNULL(@Status,Status) AND EmployeeNumber=isnull(@EmployeeNumber,EmployeeNumber)
+	and membercode not in (select MemberCode from tbl_shareClossing where ShareClossingDate<=isnull(@AsonDate,ShareClossingDate))	and (MemberType='WORKERS')
+	ORDER BY MEMBERCODE
+END
+
+if @OTHER =1
+BEGIN
+	insert into tbl_MemberReport
+	SELECT     MemberCode, Number, EmployeeNumber, TDOpening,ShareOpening, CONVERT(varchar, EmployeeNumber) AS strEmpNo, MemberName,MemberName_Tamil,MemberType, Status,
+	Photo_Image,Address1,Address2,Address3,Address4,Address_Tamil1,Address_Tamil2,Address_Tamil3,Address_Tamil4,MobileNo
+	FROM         tbl_Member
+	WHERE   MemberCode = ISNULL(@MemberCode,MemberCode) AND Status = ISNULL(@Status,Status) AND EmployeeNumber=isnull(@EmployeeNumber,EmployeeNumber)
+	and membercode not in (select MemberCode from tbl_shareClossing where ShareClossingDate<=isnull(@AsonDate,ShareClossingDate))
+	and (MemberType='OTHER' OR MemberType IS NULL)
+	ORDER BY MEMBERCODE
+END
+
+IF @STAFF=1 OR @Worker=1 OR @Other=1 
+BEGIN
+	SELECT     MemberCode, Number, EmployeeNumber, TDOpening,ShareOpening, CONVERT(varchar, EmployeeNumber) AS strEmpNo, MemberName,MemberName_Tamil,MemberType, Status,
+	Photo_Image,Address1,Address2,Address3,Address4,Address_Tamil1,Address_Tamil2,Address_Tamil3,Address_Tamil4,MobileNo
+	FROM         tbl_MemberREPORT
+	WHERE   MemberCode = ISNULL(@MemberCode,MemberCode) AND Status = ISNULL(@Status,Status) AND EmployeeNumber=isnull(@EmployeeNumber,EmployeeNumber)
+	and membercode not in (select MemberCode from tbl_shareClossing where ShareClossingDate<=isnull(@AsonDate,ShareClossingDate))
+END
+ELSE
+
+BEGIN
+	SELECT     MemberCode, Number, EmployeeNumber, TDOpening,ShareOpening, CONVERT(varchar, EmployeeNumber) AS strEmpNo, MemberName,MemberName_Tamil,MemberType, Status,
+	Photo_Image,Address1,Address2,Address3,Address4,Address_Tamil1,Address_Tamil2,Address_Tamil3,Address_Tamil4,MobileNo
+	FROM         tbl_Member
+	WHERE   MemberCode = ISNULL(@MemberCode,MemberCode) AND 
+			Status = ISNULL(@Status,Status) AND 
+			EmployeeNumber=isnull(@EmployeeNumber,EmployeeNumber) 
+and membercode not in (select MemberCode from tbl_shareClossing where ShareClossingDate<=isnull(@AsonDate,ShareClossingDate))
+END
+
+
+
+GO
+
+GO
+ALTER procedure [dbo].[sp_VoucherEntry_BindData]
+	@CompanyCode int
+as
+	exec sp_Group_GetAll @Companycode=@companycode
+	exec sp_Head_GetAll @CompanyCode=@CompanyCode
+	select CONVERT(varchar, EmployeeNumber) AS strEmpNo,* from tbl_Member 
+
+
+GO
+
+
+
+ALTER Procedure [dbo].[sp_CashBalance]
+	@CompanyCode  int,
+	@FyCode  int,
+	@ToDate  Datetime
+as
+
+	DECLARE @OBalance as numeric(12,2)
+	select @OBalance= isnull(OPENINGBALANCE,0) from tbl_HEADOPENING where CompanyCode=@CompanyCode AND FYCODE= @fYcODE and HeadCode=1
+	Declare @BDate as datetime
+	select @BDate=max(BalanceDate) from tbl_CashBalance
+	if @BDate is Null
+	select @BDate=  fyStart from tbl_fyear where fyCode=@FyCode
+	
+	delete tbl_CashBalance where BalanceDate>=@BDate
+	
+	while @BDate<=@ToDate
+	BEGIN
+		Declare @Num as numeric(12,2)
+		Declare @CB as numeric(12,2)
+		Declare @VBR as numeric(12,2)
+		Declare @VBP as numeric(12,2)
+		select @CB=0
+		Select @VBR=0
+		SELECT @VBP=0
+		select @CB=0
+		select @VBR = isnull(sum(Amount),0) from vw_Voucher where companycode=@CompanyCode and VoucherType='C' and rp='R' and VoucherDate=@BDate
+		select @VBP = isnull(sum(Amount),0) from vw_Voucher where companycode=@CompanyCode and VoucherType='C' and rp='P' and VoucherDate=@BDate
+		
+		Select @Num=@OBalance+ISNULL(@CB,0)+@VBR-@VBP
+
+		exec sp_NumberToWord @Number=@Num
+
+		INSERT INTO tbl_CashBalance
+		select @BDate,@OBalance,@Num,word from tbl_Word
+		SELECT @BDate =@BDate+1
+		SELECT @OBalance=@Num
+	END
+
+
+GO
+ALTER procedure [dbo].[sp_MemberLoan_GetAll]
+	@LoanCode int=null,
+	@MemberCode int=null,
+	@LoanNameCode int=null,
+	@MemberType varchar(10)=null
+as
+	select * from vw_memberloan
+	where loancode=ISNULL(@loancode,loancode) and
+	Membercode=ISNULL(@MemberCode,MemberCode) and
+	LoanNamecode=ISNULL(@LoanNameCode,LoanNameCode) and
+	LoanClossedStatus=0 and MemberType=isnull(@MemberType,MemberType)
+order by MemberCode 
+
+
+GO

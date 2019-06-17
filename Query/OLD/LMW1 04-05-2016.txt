@@ -1,0 +1,126 @@
+
+ALTER PROCEDURE [dbo].[sp_ShareCollection_rpt]
+(@FromDate datetime=null,
+ @ToDate datetime =null,
+ @YearNumber int,
+ @YearNumber1 int,
+ @MonthFrom int,
+ @MonthTo int,
+ @EmpNo int=null)
+as
+UPDATE TBL_MEMBER SET TDOpen=0,APRIL=0,MAY=0,JUNE=0,JULY=0,AUGUST=0,SEPTEMBER=0,OCTOBER=0,NOVEMBER=0,DECEMBER=0,JANUARY=0,FEBRUARY=0,MARCH=0
+
+declare @LoopMonth as int
+select @LoopMonth=@Monthfrom
+
+declare @Lmonth as int
+
+WHILE @LoopMonth<=@MonthTo
+begin
+
+select @Lmonth=@LoopMonth
+
+--if @Lmonth>12
+--	Select @Lmonth=@Lmonth-3
+		--UPDATE tbl_Member SET Insurance =  (SELECT ISNULL(SUM(Insurance),0) FROM tbl_TDInterest WHERE TDFromDate>=@FromDate and TDToDate<=@ToDate and tbl_Member.MemberCode=tbl_TDInterest.MemberCode )
+		
+		UPDATE TBL_MEMBER SET TDOpen=ISNULL(ShareOPening+		
+		(select isnull(sum(Amount),0) from tbl_ShareDeposit  where ShareDepositDate<@Fromdate and  tbl_Member.membercode=tbl_ShareDeposit.Membercode),0)
+		--(select isnull(sum(Amount),0) from tbl_ShareDeposit where ShareDepositDate<@Fromdate and  tbl_Member.membercode=tbl_ShareDeposit.Membercode)-(select isnull(sum(RefundAmount),0) from tbl_TdRefund where  tbl_Member.membercode=tbl_TdRefund.Membercode)
+
+
+		if @LMonth=4 
+		UPDATE TBL_MEMBER SET APRIL=(select sum(Amount) from tbl_ShareDeposit where Year_Number=@YearNumber and Month_Number=4 and  tbl_Member.membercode=tbl_ShareDeposit.Membercode)
+
+		if @LMonth=5 
+		UPDATE TBL_MEMBER SET May=(select sum(Amount) from tbl_ShareDeposit where Year_Number=@YearNumber and Month_Number=5 and  tbl_Member.membercode=tbl_ShareDeposit.Membercode)
+
+		if @LMonth=6 
+		UPDATE TBL_MEMBER SET June=(select sum(Amount) from tbl_ShareDeposit where Year_Number=@YearNumber and Month_Number=6 and  tbl_Member.membercode=tbl_ShareDeposit.Membercode)
+
+		if @LMonth=7 
+		UPDATE TBL_MEMBER SET July=(select sum(Amount) from tbl_ShareDeposit where Year_Number=@YearNumber and Month_Number=7 and  tbl_Member.membercode=tbl_ShareDeposit.Membercode)
+
+		if @LMonth=8 
+		UPDATE TBL_MEMBER SET August=(select sum(Amount) from tbl_ShareDeposit where Year_Number=@YearNumber and Month_Number=8 and  tbl_Member.membercode=tbl_ShareDeposit.Membercode)
+
+		if @LMonth=9 
+		UPDATE TBL_MEMBER SET September=(select sum(Amount) from tbl_ShareDeposit where Year_Number=@YearNumber and Month_Number=9 and  tbl_Member.membercode=tbl_ShareDeposit.Membercode)
+
+		if @LMonth=10 
+		UPDATE TBL_MEMBER SET October=(select sum(Amount) from tbl_ShareDeposit where Year_Number=@YearNumber and Month_Number=10 and  tbl_Member.membercode=tbl_ShareDeposit.Membercode)
+
+		if @LMonth=11 
+		UPDATE TBL_MEMBER SET November=(select sum(Amount) from tbl_ShareDeposit where Year_Number=@YearNumber and Month_Number=11 and  tbl_Member.membercode=tbl_ShareDeposit.Membercode)
+
+		if @LMonth=12 
+		UPDATE TBL_MEMBER SET December=(select sum(Amount) from tbl_ShareDeposit where Year_Number=@YearNumber and Month_Number=12 and  tbl_Member.membercode=tbl_ShareDeposit.Membercode)
+
+
+		if @LMonth=13 
+		UPDATE TBL_MEMBER SET January=(select sum(Amount) from tbl_ShareDeposit where Year_Number=@YearNumber1 and Month_Number=1 and  tbl_Member.membercode=tbl_ShareDeposit.Membercode)
+
+		if @LMonth=14 
+		UPDATE TBL_MEMBER SET February=(select sum(Amount) from tbl_ShareDeposit where Year_Number=@YearNumber1 and Month_Number=2 and  tbl_Member.membercode=tbl_ShareDeposit.Membercode)
+
+		if @LMonth=15 
+		UPDATE TBL_MEMBER SET March=(select sum(Amount) from tbl_ShareDeposit where Year_Number=@YearNumber1 and Month_Number=3 and  tbl_Member.membercode=tbl_ShareDeposit.Membercode)
+
+select @LoopMonth =@LoopMonth+1
+end
+
+update tbl_Member set intonopening= (select isnull(sum(IntOnOpening),0)  FROM tbl_ShareDivident 
+WHERE TDFromDate>=@FromDate AND TDToDate<=@TODATE and tbl_Member.MemberCode=tbl_ShareDivident.MemberCode)
+
+
+update tbl_Member set intonCollection= (select isnull(sum(intonCollection),0)  FROM tbl_ShareDivident 
+WHERE TDFromDate>=@FromDate AND TDToDate<=@TODATE and tbl_Member.MemberCode=tbl_ShareDivident.MemberCode)
+
+
+SELECT    0 as companycode, Row_Number() over (Partition by C_date Order by c_date,EmployeeNumber) as RowNo, tbl_Member.MemberCode, EmployeeNumber,Membername,Number, TDOpen as TDOpening, APril, May, June, July, August, September, October, November, December, 
+                      January, February, March,payment.payment,
+isnull(april,0)+isnull(May,0)+isnull(June,0)+isnull(July,0)+isnull(August,0)+isnull(September,0)+isnull(October,0)+isnull(November,0)+isnull(December,0)+isnull(January,0)+isnull(February,0)+isnull(March,0) as TotalCollection ,
+intonopening,intoncollection,insurance,
+isnull(tdopen,0)+isnull(april,0)+isnull(May,0)+isnull(June,0)+isnull(July,0)+isnull(August,0)+isnull(September,0)+isnull(October,0)+isnull(November,0)+isnull(December,0)+isnull(January,0)+isnull(February,0)+isnull(March,0)+isnull(intonopening,0)+isnull(intoncollection,0)-isnull(payment.Payment,0) as ClossingBalance
+FROM         tbl_Member left outer join
+(select MemberCode,OpeningAmt +TDCollection as Payment from tbl_ShareClossing  ) as payment
+on tbl_Member.MemberCode=payment.MemberCode
+
+
+where isnull(tdopen,0)+isnull(april,0)+isnull(May,0)+isnull(June,0)+isnull(July,0)+isnull(August,0)+isnull(September,0)+isnull(October,0)
++isnull(November,0)+isnull(December,0)+isnull(January,0)+isnull(February,0)+isnull(March,0) >0  and
+EmployeeNumber=isnull(@EmpNo,EmployeeNumber)
+order by EmployeeNumber
+
+
+
+
+go
+
+
+
+
+ALTER PROCEDURE [dbo].[sp_DummyDayBook]
+	@FromDate as Datetime,
+	@ToDate as Datetime,
+	@CompanyCode as int
+as
+DECLARE @LoopDate as DateTime
+Select @LoopDate=@FromDate
+
+Delete from tbl_DummyDB
+while @LoopDate<= @ToDate
+BEGIN
+	--Voucher Entry Table
+	insert into tbl_DummyDB
+--	select Voucherdate,GroupName,HeadName,case when headname=Remarks then '' else remarks end as head1,null ,case when VoucherType='C' then Amount end,case when VoucherType='A' then Amount end,amount,RP,HeadCode,GroupCode,'V',VoucherCode,Remarks,NULL,VoucherNumber from vw_Voucher WHERE CompanyCode=@CompanyCode AND VoucherDate=@LoopDate
+SELECT     VoucherDate, GroupName, HeadName, CASE WHEN headname = Remarks THEN '' ELSE remarks + (case when acno is null or ACNO=0 then '' else CONVERT(varchar, ACNo)end) END AS head1,
+					  NULL AS Expr1, Amount, 
+                      Adjustment, Amount + Adjustment AS Expr2, RP, HeadCode, GroupCode, 'V' AS Expr3, VoucherCode, Remarks,ACNO, NULL AS Expr4, VoucherNumber
+FROM         vw_Voucher
+WHERE     (CompanyCode = @CompanyCode) AND (VoucherDate = @LoopDate)
+	SELECT @LoopDate=@LoopDate+1
+End
+
+
+go

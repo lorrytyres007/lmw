@@ -1,0 +1,432 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+LMW
+</name>
+</assembly>
+<members>
+<member name="T:LMW.LMWDataSet.sp_Company_GetAllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_DayBook_RptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_Group_GetAllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_Head_GetAllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_LedgerBookDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_DayBook_FINALDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_DayBook_PytDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TDCollectionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_Member_GetAllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_DayBookDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TDClossing_GetAllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TDRefund_GetAllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TrailBalanceDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_ShareCollection_rptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_ShareClossing_GetAllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_MemberLoan_RptGetallDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_ShareDivident_GetAllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_PassBookDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_MemberLoan_GetAllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_LoanDemandDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TD_PassBookDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_Share_PassBookDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_CollectionList_RptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_Company_GetAllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_DayBook_RptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_Group_GetAllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_Head_GetAllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_LedgerBookRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_DayBook_FINALRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_DayBook_PytRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TDCollectionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_Member_GetAllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_DayBookRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TDClossing_GetAllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TDRefund_GetAllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TrailBalanceRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_ShareCollection_rptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_ShareClossing_GetAllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_MemberLoan_RptGetallRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_ShareDivident_GetAllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_PassBookRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_MemberLoan_GetAllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_LoanDemandRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TD_PassBookRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_Share_PassBookRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_CollectionList_RptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_Company_GetAllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_DayBook_RptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_Group_GetAllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_Head_GetAllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_LedgerBookRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_DayBook_FINALRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_DayBook_PytRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TDCollectionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_Member_GetAllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_DayBookRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TDClossing_GetAllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TDRefund_GetAllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TrailBalanceRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_ShareCollection_rptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_ShareClossing_GetAllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_MemberLoan_RptGetallRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_ShareDivident_GetAllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_PassBookRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_MemberLoan_GetAllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_LoanDemandRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_TD_PassBookRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_Share_PassBookRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet.sp_CollectionList_RptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:LMW.LMWDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_Company_GetAllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_DayBook_RptTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_Group_GetAllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_Head_GetAllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_LedgerBookTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_DayBook_FINALTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_DayBook_PytTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_TDCollectionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_Member_GetAllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_DayBookTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_TDClossing_GetAllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_TDRefund_GetAllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_TrailBalanceTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_ShareCollection_rptTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_ShareClossing_GetAllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_MemberLoan_RptGetallTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_ShareDivident_GetAllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_PassBookTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_MemberLoan_GetAllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_LoanDemandTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_TD_PassBookTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_Share_PassBookTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.sp_CollectionList_RptTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.QueriesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:LMW.LMWDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(LMW.LMWDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:LMW.LMWDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(LMW.LMWDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:LMW.LMWDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(LMW.LMWDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:LMW.LMWDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:LMW.LMWDataSetTableAdapters.TableAdapterManager.UpdateAll(LMW.LMWDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:LMW.LMWDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="P:LMW.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:LMW.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:LMW.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

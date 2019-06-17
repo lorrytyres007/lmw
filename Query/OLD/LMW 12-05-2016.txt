@@ -1,0 +1,179 @@
+1978  tr
+1174  pr
+2957  wp
+
+
+
+3329 rs
+
+ALTER TABLE tbl_LoanDemand ADD CollDate datetime
+ALTER TABLE tbl_LoanDemand ADD CollDate datetime
+ALTER TABLE tbl_LoanDemand ADD MemberCode bigint
+ALTER TABLE tbl_LoanDemand ADD ODPrincipal Numeric(12,2)
+ALTER TABLE tbl_LoanDemand ADD ODInterest Numeric(12,2)
+ALTER TABLE tbl_LoanDemand ADD CollODPrincipal Numeric(12,2)
+ALTER TABLE tbl_LoanDemand ADD CollODInterest Numeric(12,2)
+ALTER TABLE tbl_LoanDemand ADD CollOS Numeric(12,2)
+ALTER TABLE tbl_LoanDemand ADD LoanOS Numeric(12,2)
+ALTER TABLE tbl_LoanDemand ADD LoanOSforint Numeric(12,2)
+ALTER TABLE tbl_LoanDemand ADD StaffLoan bit
+ALTER TABLE tbl_LoanDemand ADD WorkerLoan Bit
+
+ALTER TABLE tbl_MemberLoan ADD MaturityDate datetime
+ALTER TABLE tbl_MemberLoan ADD LoanClossedStatus bit
+
+update tbl_MemberLoan set LoanClossedStatus=0 
+update tbl_MemberLoan set MaturityDate=DATEADD(MM,LoanPeriod,LoanDate)
+
+
+update tbl_LoanDemand set loanos=LoanOutStanding,loanosforint=LoanOutStanding 
+
+update tbl_LoanDemand set collodprincipal=0,collodinterest=0
+
+update tbl_LoanDemand set CollOS=OdPrincipal+ODInterest+Principal+Interest 
+
+update tbl_LoanDemand set staffloan=(select case when MemberType='STAFF' THEN 1 ELSE 0 END FROM vw_MemberLoan  WHERE 
+vw_MemberLoan.Loancode=tbl_LoanDemand.Loancode ) 
+
+update tbl_LoanDemand set Workerloan=(select case when MemberType='STAFF' THEN 0 ELSE 1 END FROM vw_MemberLoan  WHERE 
+vw_MemberLoan.Loancode=tbl_LoanDemand.Loancode ) 
+
+update tbl_LoanDemand set MemberCode=(select MemberCode FROM vw_MemberLoan  WHERE 
+vw_MemberLoan.Loancode=tbl_LoanDemand.Loancode )
+
+go
+
+Create procedure sp_loanDemand_GetAll
+	@StaffLoan bit,@MemberCode int=null,@LoanCode int=null,@DateFrom as date,@NewDemand bit=0
+as
+
+	select * from tbl_LoanDemand where StaffLoan=@StaffLoan and membercode=ISNULL(@MemberCode,MemberCode) and Loancode=ISNULL(@LoanCode,LoanCode)
+	and DateFrom>=@DateFrom and DateTo>@DateFrom and NewDemand=@NewDemand 
+go
+
+ALTER VIEW [dbo].[vw_MemberLoan]
+AS
+SELECT     dbo.tbl_MemberLoan.LoanCode, dbo.tbl_MemberLoan.MemberCode, dbo.tbl_Member.Number, dbo.tbl_Member.EmployeeNumber, dbo.tbl_Member.MemberName, 
+                      dbo.tbl_Member.MemberName_Tamil, dbo.tbl_Member.MemberType, dbo.tbl_MemberLoan.LoanNamecode, dbo.tbl_LoanName.LoanName, 
+                      dbo.tbl_MemberLoan.LoanNumber, CONVERT(varchar(50), dbo.tbl_MemberLoan.LoanNumber) AS StrLoanNumber, dbo.tbl_MemberLoan.LoanDate, 
+                      dbo.tbl_MemberLoan.ROI, dbo.tbl_MemberLoan.LoanAmount, dbo.tbl_MemberLoan.LoanPeriod, dbo.tbl_MemberLoan.LastPaidDate, 
+                      dbo.tbl_MemberLoan.Emi_Amount, dbo.tbl_MemberLoan.paymode, dbo.tbl_MemberLoan.LoanOutstanding, dbo.tbl_MemberLoan.Principal, 
+                      dbo.tbl_MemberLoan.ODPrincipal, dbo.tbl_MemberLoan.Interest, dbo.tbl_MemberLoan.ODInterest, dbo.tbl_MemberLoan.MaturityDate, 
+                      dbo.tbl_MemberLoan.LoanClossedStatus
+FROM         dbo.tbl_MemberLoan LEFT OUTER JOIN
+                      dbo.tbl_LoanName ON dbo.tbl_MemberLoan.LoanNamecode = dbo.tbl_LoanName.LoanNameCode LEFT OUTER JOIN
+                      dbo.tbl_Member ON dbo.tbl_MemberLoan.MemberCode = dbo.tbl_Member.MemberCode
+
+GO
+
+
+
+ALTER procedure [dbo].[sp_MemberLoan_GetAll]
+	@LoanCode int=null,
+	@MemberCode int=null,
+	@LoanNameCode int=null
+as
+	select * from vw_memberloan
+	where loancode=ISNULL(@loancode,loancode) and
+	Membercode=ISNULL(@MemberCode,MemberCode) and
+	LoanNamecode=ISNULL(@LoanNameCode,LoanNameCode) and
+	LoanClossedStatus=0
+GO
+
+
+
+ALTER PROCEDURE [dbo].[sp_LoanDemand_Insert]
+	@DemandCode int=null,
+	@DateFrom Datetime,
+	@DateTo Datetime,
+	@MonthNo int,
+	@YearNo int,
+	@DemandDate Datetime,
+	@Fycode int,
+	@MemberCode int,
+	@LoanCode int,
+	@LoanOutStanding numeric(12,2),
+	@Principal numeric(12,2),
+	@Interest numeric(12,2),
+	@ODPrincipal numeric(12,2),
+	@ODInterest numeric(12,2),
+	@CollDate datetime=null,
+	@CollPrincipal numeric(12,2)=0,
+	@CollInterest numeric(12,2)=0,
+	@NewDemand bit=false,
+	@CollODInterest numeric(12,2)=0,
+	@CollODPrincipal numeric(12,2)=0,
+	@CollOS numeric(12,2)=0,
+	@LoanOs numeric(12,2)=0,
+	@LoanOSforInt numeric(12,2)=0,
+	@StaffLoan bit=false,
+	@WorkerLoan bit=False
+	
+as
+
+select  @DemandCode =ISNULL(max(demandCode),0)+1 from tbl_LoanDemand 
+INSERT INTO tbl_LoanDemand
+	(DemandCode ,
+	DateFrom,
+	DateTo,
+	MonthNo,
+	YearNo,
+	DemandDate,
+	Fycode,
+	MemberCode,
+	LoanCode,
+	LoanOutStanding,
+	Principal,
+	Interest,
+	ODPrincipal,
+	ODInterest,
+	CollDate,
+	CollPrincipal,
+	CollInterest,
+	NewDemand,
+	CollODPrincipal,
+	COllODInterest,
+	CollOs,
+	LoanOS,
+	LoanOSforInt,
+	StaffLoan,
+	WorkerLoan)
+	Values
+	(@DemandCode ,
+	@DateFrom,
+	@DateTo,
+	@MonthNo,
+	@YearNo,
+	@DemandDate,
+	@Fycode,
+	@MemberCode,
+	@LoanCode,
+	@LoanOutStanding,
+	@Principal,
+	@Interest,
+	@ODPrincipal,
+	@ODInterest,
+	@CollDate,
+	@CollPrincipal,
+	@CollInterest,
+	@NewDemand ,
+	@CollODPrincipal,
+	@COllODInterest,
+	@CollOs,
+	@LoanOS,
+	@LoanOSforInt,
+	@StaffLoan,
+	@WorkerLoan)
+
+
+GO
+
+Create Procedure sp_CollectionList
+	@Datefrom datetime,@DateTo Datetime
+as 
+select MemberCode,count(LoanCode)NoofLoans,sum(CollOS)Demand  from vw_LoanDemand 
+where datefrom =@DateFrom and Dateto=@Dateto
+group by membercode  order by MemberCode
+
+
+Go

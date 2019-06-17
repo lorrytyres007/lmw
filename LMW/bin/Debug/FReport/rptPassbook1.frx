@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="06/04/2017 20:32:11" ReportInfo.Modified="06/04/2017 20:46:58" ReportInfo.CreatorVersion="2014.1.3.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqfv+xjgN11N5FdKfyJf5H03gQa2bGT/uXphPqZs0+UPDQ3MN3Eiad5Cx1Yiq3Djh+Hnm4zjbW6U9yi3NrtZo0tThiODaod1I4j82JnhahDVjBs6pKMGViz1TGrriSXOIrdrDbCv3K0tLz3xYHV0MrXxgsHkshFNbrvpZCh1IeQaVbqEJADvyz5Vc8Hy2KCO2hjleCSrTeSPXOwqr8kNRJMw==">
+      <TableDataSource Name="Table" Alias="sp_PassBook" DataType="System.Int32" Enabled="true" SelectCommand="Exec sp_PassBook">
+        <Column Name="CollectionDate" DataType="System.DateTime"/>
+        <Column Name="Particulars" DataType="System.String"/>
+        <Column Name="Principle" DataType="System.Decimal"/>
+        <Column Name="Int" DataType="System.Decimal"/>
+        <Column Name="Bal_OS" DataType="System.Decimal"/>
+        <Column Name="LoanCode" DataType="System.Int32"/>
+        <Column Name="MemberCode" DataType="System.Int32"/>
+        <Column Name="ROI" DataType="System.Decimal"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="177.8" PaperHeight="228.6" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="1" OtherPagesSource="1">
+    <ReportTitleBand Name="ReportTitle1" Width="672.08" Height="28.8"/>
+    <PageHeaderBand Name="PageHeader1" Top="32.97" Width="672.08" Height="28.8"/>
+    <GroupHeaderBand Name="GroupHeader1" Top="65.93" Width="672.08" Condition="[sp_PassBook.MemberCode]">
+      <GroupHeaderBand Name="GroupHeader2" Top="70.1" Width="672.08" Condition="[sp_PassBook.LoanCode]">
+        <DataBand Name="Data1" Top="74.27" Width="672.08" Height="19.2" DataSource="Table">
+          <TextObject Name="Text1" Left="9.6" Width="96" Height="19.2" Text="[sp_PassBook.CollectionDate]" Format="Date" Format.Format="d" VertAlign="Center" Font="Courier New, 10pt, style=Bold"/>
+          <TextObject Name="Text2" Left="105.6" Width="182.4" Height="19.2" Text="[sp_PassBook.Particulars]" VertAlign="Center" Font="Courier New, 10pt, style=Bold"/>
+          <TextObject Name="Text3" Left="288" Width="67.2" Height="19.2" Text="[sp_PassBook.ROI] %" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" Font="Courier New, 10pt, style=Bold"/>
+          <TextObject Name="Text4" Left="355.2" Width="96" Height="19.2" Text="[sp_PassBook.Principle]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" Font="Courier New, 10pt, style=Bold"/>
+          <TextObject Name="Text5" Left="451.2" Width="96" Height="19.2" Text="[sp_PassBook.Int]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" Font="Courier New, 10pt, style=Bold"/>
+          <TextObject Name="Text6" Left="547.2" Width="115.2" Height="19.2" Text="[sp_PassBook.Bal_OS]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Courier New, 10pt, style=Bold"/>
+          <Sort>
+            <Sort Expression="[sp_PassBook.LoanCode]"/>
+          </Sort>
+        </DataBand>
+        <GroupFooterBand Name="GroupFooter2" Top="97.63" Width="672.08"/>
+      </GroupHeaderBand>
+      <GroupFooterBand Name="GroupFooter1" Top="101.8" Width="672.08" Height="9.6">
+        <LineObject Name="Line1" Width="739.2" Border.Style="Dash"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+    <PageFooterBand Name="PageFooter1" Top="115.57" Width="672.08" Height="19.2"/>
+  </ReportPage>
+</Report>

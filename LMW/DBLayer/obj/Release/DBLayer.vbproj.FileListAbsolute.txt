@@ -1,0 +1,10 @@
+D:\SWAS\DAIRY\Dairy\Dairy\bin\Debug\DBLayer.pdb
+D:\SWAS\DAIRY\Dairy\Dairy\bin\Debug\DBLayer.xml
+D:\SWAS\DAIRY\Dairy\DBLayer\bin\Release\DBLayer.pdb
+D:\SWAS\DAIRY\Dairy\DBLayer\bin\Release\DBLayer.xml
+D:\SWAS\DAIRY\Dairy\DBLayer\obj\Release\ResolveAssemblyReference.cache
+D:\SWAS\DAIRY\Dairy\DBLayer\obj\Release\DBLayer.Resources.resources
+D:\SWAS\DAIRY\Dairy\DBLayer\obj\Release\DBLayer.vbproj.GenerateResource.Cache
+D:\SWAS\DAIRY\Dairy\DBLayer\obj\Release\DBLayer.dll
+D:\SWAS\DAIRY\Dairy\DBLayer\obj\Release\DBLayer.xml
+D:\SWAS\DAIRY\Dairy\DBLayer\obj\Release\DBLayer.pdb

@@ -1,0 +1,38 @@
+ALTER PROCEDURE [dbo].[sp_ShareDivident_GetAll]
+	(@ShareDividentCode int = null, 
+	@Status bit = null,
+	@ShareDepositDate datetime=null,
+	@fromdate as datetime=null,
+	@Todate as datetime=null,
+	@FyCode as int =0)
+
+as
+if @FyCode>0 
+	select @fromdate=fystart,@Todate=Fyend from tbl_FYear where FYCode=@FyCode 
+if @fromdate is null
+begin
+SELECT     tbl_ShareDivident.ShareDividentCode, tbl_ShareDivident.TDFromDate, tbl_ShareDivident.TDToDate, tbl_ShareDivident.MemberCode, 
+                      tbl_ShareDivident.OpeningAmount, tbl_ShareDivident.TDCollection, tbl_ShareDivident.IntOnOpening, tbl_ShareDivident.IntonCollection, 
+                      tbl_ShareDivident.TotalPayment, tbl_ShareDivident.NettTotal, tbl_ShareDivident.ROI, tbl_Member.Number, tbl_Member.EmployeeNumber, 
+                      tbl_Member.MemberName_Tamil, tbl_Member.ShareOpening, tbl_Member.MemberName, tbl_ShareClossing.ShareClossingDate
+FROM         tbl_ShareClossing RIGHT OUTER JOIN
+                      tbl_Member ON tbl_ShareClossing.MemberCode = tbl_Member.MemberCode LEFT OUTER JOIN
+                      tbl_ShareDivident ON tbl_Member.MemberCode = tbl_ShareDivident.MemberCode
+WHERE     (tbl_ShareDivident.ShareDividentCode = ISNULL(@ShareDividentCode, tbl_ShareDivident.ShareDividentCode)) AND (tbl_Member.Status = ISNULL(@Status, 
+                      tbl_Member.Status))
+ORDER BY tbl_ShareDivident.ShareDividentCode
+end
+else
+begin
+SELECT     tbl_ShareDivident.ShareDividentCode, tbl_ShareDivident.TDFromDate, tbl_ShareDivident.TDToDate, tbl_ShareDivident.MemberCode, 
+                      tbl_ShareDivident.OpeningAmount, tbl_ShareDivident.TDCollection, tbl_ShareDivident.IntOnOpening, tbl_ShareDivident.IntonCollection, 
+                      tbl_ShareDivident.TotalPayment, tbl_ShareDivident.NettTotal, tbl_ShareDivident.ROI, tbl_Member.Number, tbl_Member.EmployeeNumber, 
+                      tbl_Member.MemberName_Tamil, tbl_Member.ShareOpening, tbl_Member.MemberName, tbl_ShareClossing.ShareClossingDate
+FROM         tbl_ShareClossing RIGHT OUTER JOIN
+                      tbl_Member ON tbl_ShareClossing.MemberCode = tbl_Member.MemberCode LEFT OUTER JOIN
+                      tbl_ShareDivident ON tbl_Member.MemberCode = tbl_ShareDivident.MemberCode
+WHERE     (tbl_ShareDivident.ShareDividentCode = ISNULL(@ShareDividentCode, tbl_ShareDivident.ShareDividentCode)) AND (tbl_Member.Status = ISNULL(@Status, 
+                      tbl_Member.Status) and tbl_ShareDivident.TDFromDate>=@fromdate and tbl_ShareDivident.TDFromDate<=@Todate) 
+ORDER BY tbl_ShareDivident.ShareDividentCode
+
+end

@@ -1,0 +1,52 @@
+
+ALTER Procedure [dbo].[sp_Collection]
+	@Fromdate as Datetime,
+	@ToDate as Datetime,
+	@StaffLoan as bit=1,
+	@DemandType int,
+	@MemberCode as int=null
+as
+IF @MemberCode IS NULL
+BEGIN
+	select distinct(vw_LoanDemand.EmployeeNumber),vw_LoanDemand.Membercode ,MemberName,number,MemberType,isnull(Demand1.D1,0)as FixedDemand,isnull(Demand2.D2,0) JLDemand,isnull(Demand3.D3,0) as LoanDemand, isnull(Demand1.D1,0)+isnull(Demand2.D2,0)+isnull(Demand3.D3,0) as Total
+	from vw_LoanDemand  left outer join
+	(select Membercode,SUM(principal) +SUM(Interest) +SUM(ODPrincipal)+SUM(OdInterest)-(SUM(Collprincipal) +SUM(CollInterest) +SUM(CollODPrincipal)+SUM(CollOdInterest)) As D1 from vw_LoanDemand 
+	where DateFrom >=@FromDate and DateTo<=@ToDate and Demand=1 and DemandType=1 and StaffLoan=@StaffLoan  group by Membercode) as Demand1 on vw_LoanDemand.Membercode=Demand1.Membercode 
+	left outer join
+	(select Membercode,SUM(principal) +SUM(Interest) +SUM(ODPrincipal)+SUM(OdInterest) As D2 from vw_LoanDemand 
+	where DateFrom >=@FromDate and DateTo<=@ToDate and Demand=1 and DemandType=2 and StaffLoan=@StaffLoan  group by Membercode) as Demand2 on vw_LoanDemand.Membercode=Demand2.Membercode 
+	left outer join
+	(select Membercode,SUM(principal) +SUM(Interest) +SUM(ODPrincipal)+SUM(OdInterest) As D3 from vw_LoanDemand 
+	where DateFrom >=@FromDate and DateTo<=@ToDate and Demand=1  and DemandType=3and StaffLoan=@StaffLoan  group by Membercode) as Demand3 on vw_LoanDemand.Membercode=Demand3.Membercode 
+	
+	where vw_loandemand.demandtype=@DemandType and vw_LoanDemand.DateFrom >=@FromDate and vw_LoanDemand.DateTo<=@ToDate and StaffLoan=@StaffLoan 
+	group by vw_LoanDemand.EmployeeNumber,vw_LoanDemand.MemberCode,vw_LoanDemand.MemberName,vw_LoanDemand.number,vw_LoanDemand.MemberType,Demand1.D1,Demand2.D2,Demand3.D3
+	Order by vw_LoanDemand.EmployeeNumber 
+END
+ELSE
+BEGIN
+	SELECT     DemandCode, EmployeeNumber, Membercode, MemberName, Number, MemberType, LoanNamecode, LoanName, LoanNumber, StrLoanNumber, LoanDate, ROI, 
+                      LoanAmount, LastPaidDate, Emi_Amount, paymode, MaturityDate, LoanClossedStatus, DateFrom, DateTo, Monthno, Yearno, DemandDate, FyCode, Loancode, 
+                      LoanOutStanding, Principal, Interest, OdPrincipal, ODInterest, CollDate, CollPrincipal, CollInterest, CollODPrincipal, CollODInterest, CollOS, LoanOS, LoanOSforInt, 
+                      StaffLoan, WorkerLoan, DemandType, Demand
+FROM         vw_LoanDemand
+WHERE vw_loandemand.demand=@DemandType and vw_LoanDemand.DateFrom >=@FromDate and 
+		vw_LoanDemand.DateTo<=@ToDate and StaffLoan=@StaffLoan and
+		vw_LoanDemand.Membercode=ISNULL(@MemberCode,vw_LoanDemand.MemberCode)
+ORDER BY EmployeeNumber
+END
+
+
+GO
+ALTER procedure [dbo].[sp_loanDemand_GetAll]
+	@StaffLoan bit,@MemberCode int,@LoanCode int=null,@DateFrom as datetime,@DateTo as Datetime
+as
+
+	select * from tbl_LoanDemand where StaffLoan=@StaffLoan and 
+	membercode=ISNULL(@MemberCode,MemberCode) and 
+	Loancode=ISNULL(@LoanCode,LoanCode)	and 
+	DateFrom=@DateFrom and 
+	DateTo=@DateFrom 
+
+GO
+

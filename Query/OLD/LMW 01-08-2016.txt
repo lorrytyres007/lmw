@@ -1,0 +1,27 @@
+GO
+ALTER procedure [dbo].[sp_MemberLoan_GetAll]
+	@LoanCode int=null,
+	@MemberCode int=null,
+	@LoanNameCode int=null,
+	@MemberType varchar(10)=NULL
+as
+	select * from vw_memberloan
+	where loancode=ISNULL(@loancode,loancode) and
+	Membercode=ISNULL(@MemberCode,MemberCode) and
+	LoanNamecode=ISNULL(@LoanNameCode,LoanNameCode) and
+	LoanClossedStatus=0 and MemberType=ISNULL(@Membertype,Membertype)
+order by MemberCode 
+
+
+
+GO
+ALTER procedure [dbo].[sp_loanDemand_GetAll]
+	@StaffLoan bit,@MemberCode int=null,@LoanCode int=null,@DateFrom as datetime,@DateTo as Datetime
+as
+
+	select * from tbl_LoanDemand where StaffLoan=@StaffLoan and 
+	membercode=ISNULL(@MemberCode,MemberCode) and 
+	Loancode=ISNULL(@LoanCode,LoanCode)	and 
+	DateFrom>=@DateFrom and 
+	DateTo<=@DateFrom 
+GO

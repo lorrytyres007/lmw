@@ -1,0 +1,476 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Dairy
+</name>
+</assembly>
+<members>
+<member name="T:Dairy.DairyDataSet.sp_Company_GetAllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_PaymentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_DairyDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_BonusDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_Payment_subcentreDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_ConsolidatedDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_ConsolidatedDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_HelpLine1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_HelpLine1_DetailsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Test1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Test2DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Test2_LinkDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_VoterIndividualDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_ElectionListDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_DayBookDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_DayBook_PytDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_DayBook_RptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Member_GetAllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Group_GetAllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Head_GetAllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_MonthlyPurchaseDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_MemberPourListDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_LocalSalesOnPurchaseDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_PurchaseDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Purchase_Table2DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_EmployeeBonusDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Company_GetAllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_PaymentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_DairyRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_BonusRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_Payment_subcentreRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_ConsolidatedRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_ConsolidatedRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_HelpLine1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_HelpLine1_DetailsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Test1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Test2Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Test2_LinkRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_VoterIndividualRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_ElectionListRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_DayBookRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_DayBook_PytRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_DayBook_RptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Member_GetAllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Group_GetAllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Head_GetAllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_MonthlyPurchaseRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_MemberPourListRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_LocalSalesOnPurchaseRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_PurchaseRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Purchase_Table2Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_EmployeeBonusRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Company_GetAllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_PaymentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_DairyRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_BonusRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_Payment_subcentreRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_ConsolidatedRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_ConsolidatedRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_HelpLine1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_HelpLine1_DetailsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Test1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Test2RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Test2_LinkRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_VoterIndividualRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_ElectionListRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_DayBookRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_DayBook_PytRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_DayBook_RptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Member_GetAllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Group_GetAllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Head_GetAllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_MonthlyPurchaseRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_MemberPourListRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_LocalSalesOnPurchaseRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.rpt_PurchaseRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_Purchase_Table2RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet.sp_EmployeeBonusRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Dairy.DairyDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_Company_GetAllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.rpt_PaymentTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_DairyTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_BonusTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.rpt_Payment_subcentreTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.rpt_ConsolidatedTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_ConsolidatedTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_HelpLine1TableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_HelpLine1_DetailsTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_Test1TableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_Test2TableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_Test2_LinkTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_VoterIndividualTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_ElectionListTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_DayBookTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_DayBook_PytTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_DayBook_RptTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_Member_GetAllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_Group_GetAllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_Head_GetAllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_MonthlyPurchaseTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_MemberPourListTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.rpt_LocalSalesOnPurchaseTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.rpt_PurchaseTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_Purchase_Table2TableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.sp_EmployeeBonusTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Dairy.DairyDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(Dairy.DairyDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Dairy.DairyDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(Dairy.DairyDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Dairy.DairyDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(Dairy.DairyDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Dairy.DairyDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Dairy.DairyDataSetTableAdapters.TableAdapterManager.UpdateAll(Dairy.DairyDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Dairy.DairyDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="P:Dairy.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Dairy.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Dairy.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

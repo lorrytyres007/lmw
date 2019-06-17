@@ -1,0 +1,1107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files\microsoft visual studio 9.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="1.36">
+ <Targets>
+  <Target Name="D:\SWAS\LMW\DBLayer\bin\Debug\DBLayer.dll">
+   <Modules>
+    <Module Name="dblayer.dll">
+     <Messages>
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+       <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'DBLayer.dll' with a strong name key.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Mark 'DBLayer.dll' with CLSCompliant(true) because it exposes externally visible types.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Warning">Because assembly 'DBLayer.dll' contains a ResX-based resource file, mark it with the NeutralResourcesLanguage attribute, specifying the language of the resources within the assembly. This could improve lookup performance the first time a resource is retrieved.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="DBLayer">
+       <Types>
+        <Type Name="clsCompany" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="cls" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'cls' in type name 'clsCompany' by changing it to 'Cls'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#BindRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="376">The 'this' parameter (or 'Me' in Visual Basic) of 'clsCompany.BindRecords()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="376">'clsCompany.BindRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CSTNo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="CST" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="176">Correct the casing of 'CST' in member name 'clsCompany.CSTNo()' by changing it to 'Cst'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="232">'clsCompany.DeleteRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteSubRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="240">'clsCompany.DeleteSubRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FindRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="368">'clsCompany.FindRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="224">The 'this' parameter (or 'Me' in Visual Basic) of 'clsCompany.GetRecords()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="224">'clsCompany.GetRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="224">Change 'clsCompany.GetRecords()' to a property if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InsuranceFlag" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Flag" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="MemberNoAlternate" Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="146">Replace the term 'Flag' in member name 'clsCompany.InsuranceFlag()' with an appropriate alternate or remove it entirely.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="280">'clsCompany.SaveRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveSubRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="248">'clsCompany.SaveSubRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#subcentreName" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="subcentre" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="205">Correct the casing of 'subcentre' in member name 'clsCompany.subcentreName()' by changing it to 'Subcentre'.</Issue>
+            </Message>
+            <Message Id="subcentre" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="205">Correct the spelling of 'subcentre' in member name 'clsCompany.subcentreName()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TINNo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="TIN" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="166">Correct the casing of 'TIN' in member name 'clsCompany.TINNo()' by changing it to 'Tin'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="337">'clsCompany.UpdateRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateSubRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsCompany.vb" Line="263">'clsCompany.UpdateSubRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="clsGledger" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="cls" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'cls' in type name 'clsGledger' by changing it to 'Cls'.</Issue>
+          </Message>
+          <Message Id="Gledger" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Gledger' in type name 'clsGledger'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#BindRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsGLedger.vb" Line="15">'clsGledger.BindRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="clsGroup" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="cls" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'cls' in type name 'clsGroup' by changing it to 'Cls'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#BindData()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsGroup.vb" Line="105">The 'this' parameter (or 'Me' in Visual Basic) of 'clsGroup.BindData()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsGroup.vb" Line="105">'clsGroup.BindData()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BindRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsGroup.vb" Line="165">The 'this' parameter (or 'Me' in Visual Basic) of 'clsGroup.BindRecords()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsGroup.vb" Line="165">'clsGroup.BindRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsGroup.vb" Line="113">'clsGroup.DeleteRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsGroup.vb" Line="96">The 'this' parameter (or 'Me' in Visual Basic) of 'clsGroup.GetRecords()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsGroup.vb" Line="96">'clsGroup.GetRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsGroup.vb" Line="96">Change 'clsGroup.GetRecords()' to a property if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsGroup.vb" Line="121">'clsGroup.SaveRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsGroup.vb" Line="142">'clsGroup.UpdateRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="clsHead" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="cls" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'cls' in type name 'clsHead' by changing it to 'Cls'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#BindRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsHead.vb" Line="211">'clsHead.BindRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsHead.vb" Line="118">'clsHead.DeleteRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Fycode" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Fycode" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsHead.vb" Line="29">Correct the spelling of 'Fycode' in member name 'clsHead.Fycode()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsHead.vb" Line="110">'clsHead.GetRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsHead.vb" Line="110">Change 'clsHead.GetRecords()' to a property if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OnVoucherNumber_YesNo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsHead.vb" Line="80">Remove the underscores from member name 'clsHead.OnVoucherNumber_YesNo()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OpnBalance" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Opn" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsHead.vb" Line="69">Correct the spelling of 'Opn' in member name 'clsHead.OpnBalance()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#rp" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="rp" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsHead.vb" Line="101">Correct the casing of 'rp' in member name 'clsHead.rp()' by changing it to 'RP'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="HCode" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsHead.vb" Line="139">'clsHead.SaveRecords()' declares a variable, 'HCode', of type 'Integer', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsHead.vb" Line="126">'clsHead.SaveRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="HCode" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsHead.vb" Line="175">'clsHead.UpdateRecords()' declares a variable, 'HCode', of type 'Integer', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsHead.vb" Line="160">'clsHead.UpdateRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="clsLedger_Common" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="cls" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'cls' in type name 'clsLedger_Common' by changing it to 'Cls'.</Issue>
+          </Message>
+          <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="95" Level="Error">Remove the underscores from type name 'clsLedger_Common'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#BindRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="408">'clsLedger_Common.BindRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#EAPPAmt" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="EAPP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="264">Correct the casing of 'EAPP' in member name 'clsLedger_Common.EAPPAmt()' by changing it to 'Eapp'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#EPPQty" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="EPP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="244">Correct the casing of 'EPP' in member name 'clsLedger_Common.EPPQty()' by changing it to 'Epp'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LSEAAmt" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="LSEA" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="166">Correct the casing of 'LSEA' in member name 'clsLedger_Common.LSEAAmt()' by changing it to 'Lsea'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LSEBMAmt" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="LSEBM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="137">Correct the casing of 'LSEBM' in member name 'clsLedger_Common.LSEBMAmt()' by changing it to 'Lsebm'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LSEBMLtr" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="LSEBM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="97">Correct the casing of 'LSEBM' in member name 'clsLedger_Common.LSEBMLtr()' by changing it to 'Lsebm'.</Issue>
+            </Message>
+            <Message Id="Ltr" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="97">Correct the spelling of 'Ltr' in member name 'clsLedger_Common.LSEBMLtr()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LSECMAmt" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="LSECM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="146">Correct the casing of 'LSECM' in member name 'clsLedger_Common.LSECMAmt()' by changing it to 'Lsecm'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LSECMLtr" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="LSECM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="107">Correct the casing of 'LSECM' in member name 'clsLedger_Common.LSECMLtr()' by changing it to 'Lsecm'.</Issue>
+            </Message>
+            <Message Id="Ltr" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="107">Correct the spelling of 'Ltr' in member name 'clsLedger_Common.LSECMLtr()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LSMAAmt" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="LSMA" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="156">Correct the casing of 'LSMA' in member name 'clsLedger_Common.LSMAAmt()' by changing it to 'Lsma'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LSMBMAmt" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="LSMBM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="117">Correct the casing of 'LSMBM' in member name 'clsLedger_Common.LSMBMAmt()' by changing it to 'Lsmbm'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LSMBMLtr" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="LSMBM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="78">Correct the casing of 'LSMBM' in member name 'clsLedger_Common.LSMBMLtr()' by changing it to 'Lsmbm'.</Issue>
+            </Message>
+            <Message Id="Ltr" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="78">Correct the spelling of 'Ltr' in member name 'clsLedger_Common.LSMBMLtr()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LSMCMAmt" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="LSMCM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="127">Correct the casing of 'LSMCM' in member name 'clsLedger_Common.LSMCMAmt()' by changing it to 'Lsmcm'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LSMCMLtr" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="LSMCM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="88">Correct the casing of 'LSMCM' in member name 'clsLedger_Common.LSMCMLtr()' by changing it to 'Lsmcm'.</Issue>
+            </Message>
+            <Message Id="Ltr" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="88">Correct the spelling of 'Ltr' in member name 'clsLedger_Common.LSMCMLtr()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MAPPAmt" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="MAPP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="254">Correct the casing of 'MAPP' in member name 'clsLedger_Common.MAPPAmt()' by changing it to 'Mapp'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MEAdj" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Adj" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="68">Correct the spelling of 'Adj' in member name 'clsLedger_Common.MEAdj()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MELtr" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Ltr" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="48">Correct the spelling of 'Ltr' in member name 'clsLedger_Common.MELtr()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MMAdj" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Adj" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="58">Correct the spelling of 'Adj' in member name 'clsLedger_Common.MMAdj()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MMLtr" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Ltr" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="38">Correct the spelling of 'Ltr' in member name 'clsLedger_Common.MMLtr()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MPPQty" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="MPP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="235">Correct the casing of 'MPP' in member name 'clsLedger_Common.MPPQty()' by changing it to 'Mpp'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="323">'clsLedger_Common.SaveRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SemonEntry" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Semon" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="314">Correct the spelling of 'Semon' in member name 'clsLedger_Common.SemonEntry()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SemonSales" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Semon" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="225">Correct the spelling of 'Semon' in member name 'clsLedger_Common.SemonSales()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SMEAmt" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="SME" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="206">Correct the casing of 'SME' in member name 'clsLedger_Common.SMEAmt()' by changing it to 'Sme'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SMELtr" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="SME" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="186">Correct the casing of 'SME' in member name 'clsLedger_Common.SMELtr()' by changing it to 'Sme'.</Issue>
+            </Message>
+            <Message Id="Ltr" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="186">Correct the spelling of 'Ltr' in member name 'clsLedger_Common.SMELtr()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SMMAmt" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="SMM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="196">Correct the casing of 'SMM' in member name 'clsLedger_Common.SMMAmt()' by changing it to 'Smm'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SMMLtr" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="SMM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="176">Correct the casing of 'SMM' in member name 'clsLedger_Common.SMMLtr()' by changing it to 'Smm'.</Issue>
+            </Message>
+            <Message Id="Ltr" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="176">Correct the spelling of 'Ltr' in member name 'clsLedger_Common.SMMLtr()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsLedger_Common.vb" Line="365">'clsLedger_Common.UpdateRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="clsMember" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="cls" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'cls' in type name 'clsMember' by changing it to 'Cls'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#Address_Tamil1" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="120">Remove the underscores from member name 'clsMember.Address_Tamil1()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Address_Tamil2" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="131">Remove the underscores from member name 'clsMember.Address_Tamil2()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Address_Tamil3" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="142">Remove the underscores from member name 'clsMember.Address_Tamil3()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Address_Tamil4" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="153">Remove the underscores from member name 'clsMember.Address_Tamil4()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="212">'clsMember.DeleteRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetMemberNumber()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="219">The 'this' parameter (or 'Me' in Visual Basic) of 'clsMember.GetMemberNumber()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="219">'clsMember.GetMemberNumber()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="219">Change 'clsMember.GetMemberNumber()' to a property if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="204">The 'this' parameter (or 'Me' in Visual Basic) of 'clsMember.GetRecords()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="204">'clsMember.GetRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="204">Change 'clsMember.GetRecords()' to a property if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#memberCode" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="member" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="21">Correct the casing of 'member' in member name 'clsMember.memberCode()' by changing it to 'Member'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MemberName_Tamil" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="54">Remove the underscores from member name 'clsMember.MemberName_Tamil()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Photo" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'clsMember.Photo' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="226">'clsMember.SaveRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#status" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="status" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="175">Correct the casing of 'status' in member name 'clsMember.status()' by changing it to 'Status'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsMember.vb" Line="258">'clsMember.UpdateRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="clsState" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="cls" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'cls' in type name 'clsState' by changing it to 'Cls'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#DeleteRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsState.vb" Line="46">'clsState.DeleteRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsState.vb" Line="38">The 'this' parameter (or 'Me' in Visual Basic) of 'clsState.GetRecords()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsState.vb" Line="38">'clsState.GetRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsState.vb" Line="38">Change 'clsState.GetRecords()' to a property if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsState.vb" Line="54">'clsState.SaveRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Master" File="clsState.vb" Line="69">'clsState.UpdateRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="clsThriftDeposit" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="cls" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'cls' in type name 'clsThriftDeposit' by changing it to 'Cls'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#ObjInput" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'clsThriftDeposit.ObjInput' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsThriftDeposit.vb" Line="26">'clsThriftDeposit.SaveRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#user" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="user" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsThriftDeposit.vb" Line="8">Correct the casing of 'user' in member name 'clsThriftDeposit.user()' by changing it to 'User'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="clsUserDetails" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="cls" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'cls' in type name 'clsUserDetails' by changing it to 'Cls'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#GetRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsUserDetails.vb" Line="53">The 'this' parameter (or 'Me' in Visual Basic) of 'clsUserDetails.GetRecords()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsUserDetails.vb" Line="53">Change 'clsUserDetails.GetRecords()' to a property if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Master" File="clsUserDetails.vb" Line="57">The 'this' parameter (or 'Me' in Visual Basic) of 'clsUserDetails.SaveRecords()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="clsVoucherEntry" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="cls" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'cls' in type name 'clsVoucherEntry' by changing it to 'Cls'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#AcNo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Ac" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsVoucherEntry.vb" Line="108">Correct the casing of 'Ac' in member name 'clsVoucherEntry.AcNo()' by changing it to 'AC'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BindNumber()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsVoucherEntry.vb" Line="189">'clsVoucherEntry.BindNumber()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BindRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsVoucherEntry.vb" Line="134">'clsVoucherEntry.BindRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsVoucherEntry.vb" Line="126">'clsVoucherEntry.DeleteRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsVoucherEntry.vb" Line="118">'clsVoucherEntry.GetRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsVoucherEntry.vb" Line="118">Change 'clsVoucherEntry.GetRecords()' to a property if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsVoucherEntry.vb" Line="143">'clsVoucherEntry.SaveRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateRecords()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsVoucherEntry.vb" Line="166">'clsVoucherEntry.UpdateRecords()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Voucherdate" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Voucherdate" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="D:\SWAS\LMW\DBLayer\Transaction" File="clsVoucherEntry.vb" Line="38">Correct the spelling of 'Voucherdate' in member name 'clsVoucherEntry.Voucherdate()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MainModule" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#CurDate" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'MainModule.CurDate' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#dbl_CostDiffer" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'MainModule.dbl_CostDiffer' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Decode(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="136">'MainModule.Decode(String)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="136">'MainModule.Decode(String)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Encode(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="124">'MainModule.Encode(String)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="124">'MainModule.Encode(String)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#int_CompanyCode" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'MainModule.int_CompanyCode' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#int_UserLevel" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'MainModule.int_UserLevel' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Mssg" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'MainModule.Mssg' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#objDS(System.Data.SqlClient.SqlCommand)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="103">'MainModule.objDS(SqlCommand)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="103">'MainModule.objDS(SqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="106">Be sure to set the DataSet Locale property wherever 'MainModule.objDS(SqlCommand)' creates an instance of that type.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#objDS(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="88">'MainModule.objDS(String)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="91">Be sure to set the DataSet Locale property wherever 'MainModule.objDS(String)' creates an instance of that type.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#objDScal(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="47">'MainModule.objDScal(String)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#objDT(System.Data.SqlClient.SqlCommand)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="72">'MainModule.objDT(SqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="75">Be sure to set the DataTable Locale property wherever 'MainModule.objDT(SqlCommand)' creates an instance of that type.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#objDT(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="57">'MainModule.objDT(String)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="60">Be sure to set the DataTable Locale property wherever 'MainModule.objDT(String)' creates an instance of that type.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SQLServerStart(DBLayer.MainModule+SQLServer)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="28">'MainModule.SQLServerStart(MainModule.SQLServer)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="D:\SWAS\LMW\DBLayer" File="MainModule.vb" Line="28">'MainModule.SQLServerStart(MainModule.SQLServer)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#str_TamilFont" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2015-08-07 12:59:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'MainModule.str_TamilFont' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+   <Name>Assemblies should have valid strong names</Name>
+   <Description>Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).</Description>
+   <Resolution Name="NoStrongName">Sign {0} with a strong name key.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/ms182127(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="DesignRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+   <Name>Avoid uncalled private code</Name>
+   <Description>There is uncalled code that is not externally visible and is not a known runtime entry point. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/ms182264(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+   <Name>Avoid unused private fields</Name>
+   <Description>Private fields were detected that do not appear to be accessed within the assembly. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Resolution Name="Default">It appears that field {0} is never used or is only ever assigned to. Use this field or remove it.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/ms245042(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051">
+   <Name>Do not declare visible instance fields</Name>
+   <Description>Instance fields that are visible outside of the type that declares them, limit your ability to change the implementation details for those data items. Use properties instead. They do not compromise usability or performance and they do provide flexibility in that they conceal the implementation details of the underlying data.</Description>
+   <Resolution Name="Default">Because field {0} is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/ms182141(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="DesignRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+   <Name>Identifiers should be cased correctly</Name>
+   <Description>Type, namespace, and member identifiers are Pascal-cased. Parameter identifiers are camel-cased. Two letter acronyms within these identifiers should be upper-cased, for example, use System.IO instead of System.Io. Acronyms of three or more letters should be Pascal-cased, for example, use System.Xml instead of System.XML. The pascal-casing convention capitalizes the first letter of each word, as in BackColor. The camel-casing convention formats the first letter of the first word in lowercase and capitalizes the first letter of all subsequent words, as in backgroundColor. Although it may be common practice for some two letter acronyms to not be fully capitalized, violations of this rule should not be excluded for this reason. For example, 'DbConnection', is common but incorrect; use DBConnection. A violation of this rule might be required for compatibility with existing, non-managed symbol schemes. In general, however, these symbols should not be visible outside the assembly that uses them.</Description>
+   <Resolution Name="Member">Correct the casing of '{0}' in member name {1} by changing it to '{2}'.</Resolution>
+   <Resolution Name="Type">Correct the casing of '{0}' in type name {1} by changing it to '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/ms182240(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="85">Error</MessageLevel>
+   <File Name="NamingRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+   <Name>Identifiers should be spelled correctly</Name>
+   <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+   <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Resolution Name="Type">Correct the spelling of '{0}' in type name {1}.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/bb264492(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="NamingRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707">
+   <Name>Identifiers should not contain underscores</Name>
+   <Description>Do not use underscores when specifying identifiers. Some generated Visual Studio identifiers for applications contain underscore characters. Underscore characters should generally be avoided in public identifiers.</Description>
+   <Resolution Name="Member">Remove the underscores from member name {0}.</Resolution>
+   <Resolution Name="Type">Remove the underscores from type name {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/ms182245(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="NamingRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Mark assemblies with CLSCompliantAttribute</Name>
+   <Description>Assemblies should explicitly state their CLS compliance using the CLSCompliant attribute. An assembly without this attribute is not CLS-compliant. Assemblies, modules, and types can be CLS-compliant even if some parts of the assembly, module, or type are not CLS-compliant. The following rules apply: 1) If the element is marked CLSCompliant, any noncompliant members must have the CLSCompliant attribute present with its argument set to false. 2) A comparable CLS-compliant alternative member must be supplied for each member that is not CLS-compliant.</Description>
+   <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/ms182156(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="DesignRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824">
+   <Name>Mark assemblies with NeutralResourcesLanguageAttribute</Name>
+   <Description>The NeutralResourcesLanguage attribute informs the ResourceManager of the language used to render the neutral culture's resources for an assembly. When looking up resources in the same culture as the neutral resources language, the ResourceManager automatically uses the resources located in the main assembly, instead of searching for a satellite assembly with the current user interface culture for the current thread. This will improve lookup performance for the first resource you load and can reduce your working set.</Description>
+   <Resolution Name="Default">Because assembly {0} contains a ResX-based resource file, mark it with the NeutralResourcesLanguage attribute, specifying the language of the resources within the assembly. This could improve lookup performance the first time a resource is retrieved.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/bb385967(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+   <Name>Mark members as static</Name>
+   <Description>Methods which do not access instance data or call instance methods can be marked as static (Shared in Visual Basic). After doing so, the compiler will emit non-virtual call sites to these members which will prevent a check at runtime for each call that ensures the current object pointer is non-null. This can result in a measurable performance gain for performance-sensitive code. In some cases, the failure to access the current object instance represents a correctness issue.</Description>
+   <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/ms245046(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+   <Name>Remove unused locals</Name>
+   <Description>Remove locals that are not used or are only assigned to in method implementations.</Description>
+   <Resolution Name="Default">{0} declares a variable, {1}, of type {2}, which is never used or is only assigned to. Use this variable or remove it.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/ms182278(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200">
+   <Name>Rethrow to preserve stack details</Name>
+   <Description>Use the IL rethrow instruction to preserve original stack details when re-raising a caught exception.</Description>
+   <Resolution Name="Default">{0} rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/ms182363(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="UsageRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306">
+   <Name>Set locale for data types</Name>
+   <Description>In most cases, Locale should be explicitly set to CultureInfo.InvariantCulture on DataSet and DataTable instances. Upon creation of a DataSet or DataTable instance, the Locale is set to the current culture. In most cases, the Locale should be set to CultureInfo.InvariantCulture to guarantee proper sorting behavior in all cultures.</Description>
+   <Resolution Name="Default">Be sure to set the {0} Locale property wherever {1} creates an instance of that type.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/ms182188(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="GlobalizationRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726">
+   <Name>Use preferred terms</Name>
+   <Description>Use preferred terms over deprecated alternates.</Description>
+   <Resolution Name="MemberNoAlternate">Replace the term '{0}' in member name {1} with an appropriate alternate or remove it entirely.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/ms182258(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="NamingRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
+   <Name>Use properties where appropriate</Name>
+   <Description>Properties should be used instead of Get/Set methods in most situations. Methods are preferable to properties in the following situations: the operation is a conversion, is expensive or has an observable side-effect; the order of execution is important; calling the member twice in succession creates different results; a member is static but returns a mutable value; or the member returns an array.</Description>
+   <Resolution Name="Default">Change {0} to a property if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/ms182181(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="DesignRules.dll" Version="9.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

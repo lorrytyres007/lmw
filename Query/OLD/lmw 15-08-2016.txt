@@ -1,0 +1,17 @@
+GO
+ALTER procedure [dbo].[sp_loanDemand_GetAll]
+	@StaffLoan bit,@MemberCode int=null,@LoanCode int=null,@DateFrom as datetime,@DateTo as Datetime
+as
+
+	select *,isnull(Principal,0)-isnull(CollPrincipal,0) as BalPrincipal,
+	isnull(Interest ,0)-isnull(CollInterest ,0) as BalInterest,
+	isnull(ODPrincipal,0)-isnull(CollODPrincipal,0) as BalODPrincipal,
+	isnull(ODInterest ,0)-isnull(CollODInterest ,0) as BalODInterest
+	from tbl_LoanDemand where StaffLoan=@StaffLoan and 
+	membercode=ISNULL(@MemberCode,MemberCode) and 
+	Loancode=ISNULL(@LoanCode,LoanCode)	and 
+	DateFrom>=@DateFrom and 
+	DateTo<=@DateFrom 
+
+GO
+

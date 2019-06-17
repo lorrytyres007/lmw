@@ -1,0 +1,130 @@
+
+GO
+
+CREATE TABLE [dbo].[tbl_LoanDemand](
+	[DemandCode] [int] NOT NULL,
+	[DateFrom] [datetime] NULL,
+	[DateTo] [datetime] NULL,
+	[Monthno] [int] NULL,
+	[Yearno] [int] NULL,
+	[DemandDate] [datetime] NOT NULL,
+	[FyCode] [int] NOT NULL,
+	[Membercode] [bigint] NOT NULL,
+	[Loancode] [int] NOT NULL,
+	[LoanOutStanding] [numeric](12, 2) NULL,
+	[Principal] [numeric](12, 2) NULL,
+	[Interest] [numeric](12, 2) NULL,
+	[OdPrincipal] [numeric](12, 2) NULL,
+	[ODInterest] [numeric](12, 2) NULL,
+	[CollDate] [datetime] NULL,
+	[CollPrincipal] [numeric](12, 2) NULL,
+	[CollInterest] [numeric](12, 2) NULL,
+	[NewDemand] [bit] NULL,
+	[CollODPrincipal] [numeric](12, 2) NULL,
+	[CollODInterest] [numeric](12, 2) NULL,
+	[CollOS] [numeric](12, 2) NULL,
+	[LoanOS] [numeric](12, 2) NULL,
+	[LoanOSforInt] [numeric](12, 2) NULL,
+	[StaffLoan] [bit] NOT NULL,
+	[WorkerLoan] [bit] NOT NULL,
+ CONSTRAINT [PK_tbl_LoanDemand] PRIMARY KEY CLUSTERED 
+(
+	[DemandCode] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[tbl_LoanDemand]  WITH CHECK ADD  CONSTRAINT [FK_tbl_LoanDemand_tbl_FYear_Code] FOREIGN KEY([FyCode])
+REFERENCES [dbo].[tbl_FYear] ([FYCode])
+GO
+
+ALTER TABLE [dbo].[tbl_LoanDemand] CHECK CONSTRAINT [FK_tbl_LoanDemand_tbl_FYear_Code]
+GO
+
+ALTER TABLE [dbo].[tbl_LoanDemand]  WITH CHECK ADD  CONSTRAINT [FK_tbl_LoanDemand_tbl_MemberLoan_Code] FOREIGN KEY([Loancode])
+REFERENCES [dbo].[tbl_MemberLoan] ([LoanCode])
+GO
+
+ALTER TABLE [dbo].[tbl_LoanDemand] CHECK CONSTRAINT [FK_tbl_LoanDemand_tbl_MemberLoan_Code]
+GO
+
+
+
+
+GO
+
+CREATE TABLE [dbo].[tbl_DemandCollection](
+	[CollectionCode] [int] NOT NULL,
+	[MemberCode] [bigint] NOT NULL,
+	[FixedDemand] [numeric](12, 2) NULL,
+	[JLDemand] [numeric](12, 2) NULL,
+	[LoanDemand] [numeric](12, 2) NULL,
+	[Total] [numeric](12, 2) NULL,
+	[Collection] [numeric](12, 2) NULL,
+	[Datefrom] [datetime] NULL,
+	[DateTo] [datetime] NULL,
+	[DemandMonth] [int] NULL,
+	[C_Date] [datetime] NOT NULL,
+	[C_User] [int] NOT NULL,
+	[C_Node] [int] NOT NULL,
+	[E_Date] [datetime] NULL,
+	[E_User] [int] NULL,
+	[E_Node] [int] NULL,
+ CONSTRAINT [PK_tbl_DemandCollection] PRIMARY KEY CLUSTERED 
+(
+	[CollectionCode] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[tbl_DemandCollection]  WITH CHECK ADD  CONSTRAINT [FK_tbl_DemandCollection_tbl_DemandCollection] FOREIGN KEY([CollectionCode])
+REFERENCES [dbo].[tbl_DemandCollection] ([CollectionCode])
+GO
+
+ALTER TABLE [dbo].[tbl_DemandCollection] CHECK CONSTRAINT [FK_tbl_DemandCollection_tbl_DemandCollection]
+GO
+
+
+
+
+Create Procedure [dbo].[sp_Collection]
+	@Fromdate as Datetime,
+	@ToDate as Datetime,
+	@StaffLoan as bit=1
+as
+select distinct(vw_LoanDemand.EmployeeNumber),vw_LoanDemand.Membercode ,MemberName,number,MemberType,isnull(Demand1.D1,0)as FixedDemand,isnull(Demand2.D2,0) JLDemand,isnull(Demand3.D3,0) as LoanDemand, isnull(Demand1.D1,0)+isnull(Demand2.D2,0)+isnull(Demand3.D3,0) as Total
+from vw_LoanDemand  left outer join
+(select Membercode,SUM(principal) +SUM(Interest) +SUM(ODPrincipal)+SUM(OdInterest) As D1 from vw_LoanDemand 
+where DateFrom >=@FromDate and DateTo<=@ToDate and Demand=1 and StaffLoan=@StaffLoan  group by Membercode) as Demand1 on vw_LoanDemand.Membercode=Demand1.Membercode 
+left outer join
+(select Membercode,SUM(principal) +SUM(Interest) +SUM(ODPrincipal)+SUM(OdInterest) As D2 from vw_LoanDemand 
+where DateFrom >=@FromDate and DateTo<=@ToDate and Demand=2 and StaffLoan=@StaffLoan  group by Membercode) as Demand2 on vw_LoanDemand.Membercode=Demand2.Membercode 
+left outer join
+(select Membercode,SUM(principal) +SUM(Interest) +SUM(ODPrincipal)+SUM(OdInterest) As D3 from vw_LoanDemand 
+where DateFrom >=@FromDate and DateTo<=@ToDate and Demand=3 and StaffLoan=@StaffLoan  group by Membercode) as Demand3 on vw_LoanDemand.Membercode=Demand3.Membercode 
+where vw_LoanDemand.DateFrom >=@FromDate and vw_LoanDemand.DateTo<=@ToDate and StaffLoan=@StaffLoan 
+group by vw_LoanDemand.EmployeeNumber,vw_LoanDemand.MemberCode,vw_LoanDemand.MemberName,vw_LoanDemand.number,vw_LoanDemand.MemberType,Demand1.D1,Demand2.D2,Demand3.D3
+Order by vw_LoanDemand.EmployeeNumber 
+
+
+GO
+
+ALTER VIEW [dbo].[vw_LoanDemand]
+AS
+SELECT     dbo.vw_MemberLoan.Number, dbo.vw_MemberLoan.EmployeeNumber, dbo.vw_MemberLoan.MemberName, dbo.vw_MemberLoan.MemberType, 
+                      dbo.vw_MemberLoan.LoanNamecode, dbo.vw_MemberLoan.LoanName, dbo.vw_MemberLoan.LoanNumber, dbo.vw_MemberLoan.StrLoanNumber, 
+                      dbo.vw_MemberLoan.LoanDate, dbo.vw_MemberLoan.ROI, dbo.vw_MemberLoan.LoanAmount, dbo.vw_MemberLoan.LoanPeriod, dbo.vw_MemberLoan.LastPaidDate, 
+                      dbo.vw_MemberLoan.Emi_Amount, dbo.vw_MemberLoan.paymode, dbo.vw_MemberLoan.MaturityDate, dbo.vw_MemberLoan.LoanClossedStatus, 
+                      dbo.tbl_LoanDemand.DateFrom, dbo.tbl_LoanDemand.DateTo, dbo.tbl_LoanDemand.Monthno, dbo.tbl_LoanDemand.Yearno, dbo.tbl_LoanDemand.DemandDate, 
+                      dbo.tbl_LoanDemand.FyCode, dbo.tbl_LoanDemand.Membercode, dbo.tbl_LoanDemand.Loancode, dbo.tbl_LoanDemand.LoanOutStanding, 
+                      dbo.tbl_LoanDemand.Principal, dbo.tbl_LoanDemand.Interest, dbo.tbl_LoanDemand.OdPrincipal, dbo.tbl_LoanDemand.ODInterest, dbo.tbl_LoanDemand.CollDate, 
+                      dbo.tbl_LoanDemand.CollPrincipal, dbo.tbl_LoanDemand.CollInterest, dbo.tbl_LoanDemand.NewDemand, dbo.tbl_LoanDemand.CollODPrincipal, 
+                      dbo.tbl_LoanDemand.CollODInterest, dbo.tbl_LoanDemand.CollOS, dbo.tbl_LoanDemand.LoanOS, dbo.tbl_LoanDemand.LoanOSforInt, dbo.tbl_LoanDemand.StaffLoan, 
+                      dbo.tbl_LoanDemand.WorkerLoan, dbo.vw_MemberLoan.DemandType, dbo.vw_MemberLoan.Demand
+FROM         dbo.tbl_LoanDemand LEFT OUTER JOIN
+                      dbo.vw_MemberLoan ON dbo.tbl_LoanDemand.Loancode = dbo.vw_MemberLoan.LoanCode AND 
+                      dbo.tbl_LoanDemand.Membercode = dbo.vw_MemberLoan.MemberCode
+
+GO

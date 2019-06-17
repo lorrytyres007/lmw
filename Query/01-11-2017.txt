@@ -1,0 +1,72 @@
+
+ALTER Procedure [dbo].[sp_Collection]
+	@Fromdate as Datetime=null,
+	@ToDate as Datetime=null,
+	@StaffLoan as bit=1,
+	@DemandType int,
+	@MemberCode as int=null,
+	@LoanCode int=null,
+	@MonthNo int =null,
+	@YearNo int=null,
+	@MaxDemandCode int=0
+as
+if @MaxDemandCode>0
+BEGIN
+SELECT     EmployeeNumber, DateFrom, DateTo, DemandCode, DemandType, MemberCode, MemberName, Number, MemberType, LoanName, LoanNumber, LoanDate, 
+                      LoanPeriod, Loancode, ISNULL(Principal, 0) + ISNULL(OdPrincipal, 0) - ISNULL(CollPrincipal, 0) - ISNULL(CollODPrincipal, 0) AS Principal, ISNULL(Interest, 0) 
+                      + ISNULL(ODInterest, 0) - ISNULL(CollInterest, 0) - ISNULL(CollODInterest, 0) AS Interest, ISNULL(Principal, 0) + ISNULL(OdPrincipal, 0) + ISNULL(Interest, 0) 
+                      + ISNULL(ODInterest, 0) - ISNULL(CollPrincipal, 0) - ISNULL(CollODPrincipal, 0) - ISNULL(CollInterest, 0) - ISNULL(CollODInterest, 0) AS Total, LoanOS, 
+                      Emi_Amount
+FROM         vw_LoanDemand
+WHERE     (DemandCode IN
+                          (SELECT     MAX(DemandCode) AS DemandCode
+                            FROM          vw_LoanDemand AS vw_LoanDemand_1
+                            WHERE      (Loancode = ISNULL(@LoanCode, Loancode)) AND (DemandType = ISNULL(@DemandTYpe, DemandType)) AND (StaffLoan = @StaffLoan) AND 
+                                                   (MemberCode = ISNULL(@MemberCode, MemberCode)) AND (Monthno = ISNULL(@MonthNo, Monthno)) AND (Yearno = ISNULL(@Yearno, Yearno))
+                            GROUP BY Loancode, StaffLoan, DemandType, Monthno, Yearno, MemberCode)) AND (Monthno = ISNULL(@MonthNo, Monthno)) AND (Yearno = ISNULL(@Yearno, 
+                      Yearno))
+END
+ELSE
+BEGIN
+IF @MemberCode IS NULL
+	BEGIN
+		select distinct(vw_LoanDemand.EmployeeNumber),vw_LoanDemand.Demandtype,vw_LoanDemand.Membercode ,MemberName,number,MemberType,
+				isnull(Demand1.D1,0)as FixedDemand,isnull(Demand2.D2,0) JLDemand,isnull(Demand3.D3,0) as LoanDemand, 
+				isnull(Demand1.D1,0)+isnull(Demand2.D2,0)+isnull(Demand3.D3,0) as Total,EMI_Amount
+		from vw_LoanDemand  left outer join
+		(select Membercode,SUM(isnull(principal,0)) +SUM(isnull(Interest,0)) +SUM(isnull(ODPrincipal,0))+SUM(isnull(OdInterest,0))-(SUM(isnull(Collprincipal,0)) +SUM(isnull(CollInterest,0)) +SUM(isnull(CollODPrincipal,0))+SUM(isnull(CollOdInterest,0))) As D1 
+		from vw_LoanDemand 
+		where DateFrom >=@FromDate and DateTo<=@ToDate and Demand=1 and DemandType=1 and StaffLoan=@StaffLoan  
+		group by Membercode) as Demand1 on vw_LoanDemand.Membercode=Demand1.Membercode 
+		left outer join
+		(select Membercode,SUM(isnull(principal,0)) +SUM(isnull(Interest,0)) +SUM(isnull(ODPrincipal,0))+SUM(isnull(OdInterest,0))-(SUM(isnull(Collprincipal,0)) +SUM(isnull(CollInterest,0)) +SUM(isnull(CollODPrincipal,0))+SUM(isnull(CollOdInterest,0))) As D2 from vw_LoanDemand 
+		where DateFrom >=@FromDate and DateTo<=@ToDate and Demand=1 and DemandType=2 and StaffLoan=@StaffLoan  
+		group by Membercode) as Demand2 on vw_LoanDemand.Membercode=Demand2.Membercode 
+		left outer join
+		(select Membercode,SUM(isnull(principal,0)) +SUM(isnull(Interest,0)) +SUM(isnull(ODPrincipal,0))+SUM(isnull(OdInterest,0))-(SUM(isnull(Collprincipal,0)) +SUM(isnull(CollInterest,0)) +SUM(isnull(CollODPrincipal,0))+SUM(isnull(CollOdInterest,0))) As D3 from vw_LoanDemand 
+		where DateFrom >=@FromDate and DateTo<=@ToDate and Demand=1  and DemandType=3and StaffLoan=@StaffLoan  
+		group by Membercode) as Demand3 on vw_LoanDemand.Membercode=Demand3.Membercode 
+		
+		where vw_loandemand.demandtype=@DemandType and vw_LoanDemand.DateFrom >=@FromDate and vw_LoanDemand.DateTo<=@ToDate and StaffLoan=@StaffLoan 
+		and (isnull(Demand1.D1,0)+isnull(Demand2.D2,0)+isnull(Demand3.D3,0)>0)
+			group by vw_LoanDemand.demandtype,vw_LoanDemand.EmployeeNumber,Emi_Amount,
+			vw_LoanDemand.MemberCode,vw_LoanDemand.MemberName,vw_LoanDemand.number,vw_LoanDemand.MemberType,Demand1.D1,Demand2.D2,Demand3.D3
+		Order by vw_LoanDemand.EmployeeNumber 
+	END
+	ELSE
+	BEGIN
+		SELECT     EmployeeNumber,datefrom,dateto, DemandCode, MemberCode,DemandCode, MemberName, Number, MemberType, LoanName, LoanNumber, LoanDate, LoanPeriod, Loancode, ISNULL(Principal, 
+							  0) + ISNULL(OdPrincipal, 0) - ISNULL(CollPrincipal, 0) - ISNULL(CollODPrincipal, 0) AS Principal, ISNULL(Interest, 0) + ISNULL(ODInterest, 0) - ISNULL(CollInterest, 0) 
+							  - ISNULL(CollODInterest, 0) AS Interest, ISNULL(Principal, 0) + ISNULL(OdPrincipal, 0) + ISNULL(Interest, 0) + ISNULL(ODInterest, 0) - ISNULL(CollPrincipal, 0) 
+							  - ISNULL(CollODPrincipal, 0) - ISNULL(CollInterest, 0) - ISNULL(CollODInterest, 0) AS Total, LoanOS,Emi_Amount
+		FROM         vw_LoanDemand
+		--WHERE     (DemandType = @DemandType) AND (DateFrom >= @FromDate) AND (DateTo <= @ToDate) AND (StaffLoan = @StaffLoan) AND 
+		--					  (MemberCode = ISNULL(@MemberCode, MemberCode)) and Monthno=ISNULL(@MonthNo,MonthNo) and Yearno= ISNULL(@YearNo,YearNo)
+		WHERE     DemandCode  in (Select MAX(demandCode)DemandCode from vw_LoanDemand where (DemandType = @DemandType) AND (DateFrom >= @FromDate) AND (DateTo <= @ToDate) AND (StaffLoan = @StaffLoan) AND 
+							  (MemberCode = ISNULL(@MemberCode, MemberCode)) and Monthno=ISNULL(@MonthNo,MonthNo) and Yearno= ISNULL(@YearNo,YearNo))
+
+		ORDER BY EmployeeNumber
+		
+		
+	END
+END

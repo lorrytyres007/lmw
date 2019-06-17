@@ -1,0 +1,930 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14497197-A57B-4D0E-B6EE-CF57CEA4154B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>LMW.My.MyApplication</StartupObject>
+    <RootNamespace>LMW</RootNamespace>
+    <AssemblyName>LMW</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>false</GenerateManifests>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <PublishUrl>http://localhost/LMW/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>LMW.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>LMW.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DBLayer\bin\Release\DBLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NumWord, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="PDUConverter, Version=1.10.0.0, Culture=neutral, PublicKeyToken=515d87df384dcc81" />
+    <Reference Include="sControls, Version=1.0.4479.20786, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form\Master\frmUserRights.designer.vb">
+      <DependentUpon>frmUserRights.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmUserRights.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareDivident.Designer.vb">
+      <DependentUpon>rptShareDivident.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareDivident.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\LoanDemand\frmLoanCollection.Designer.vb">
+      <DependentUpon>frmLoanCollection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\LoanDemand\frmLoanCollection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\LoanDemand\frmLoanDemand.Designer.vb">
+      <DependentUpon>frmLoanDemand.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\LoanDemand\frmLoanDemand.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptSharePassBook.Designer.vb">
+      <DependentUpon>rptSharePassBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptSharePassBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptTDPassBook.Designer.vb">
+      <DependentUpon>rptTDPassBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptTDPassBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptLoanDemand.Designer.vb">
+      <DependentUpon>rptLoanDemand.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptLoanDemand.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptLoanPassBook.Designer.vb">
+      <DependentUpon>rptLoanPassBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptLoanPassBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptLoanDetails.Designer.vb">
+      <DependentUpon>rptLoanDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptLoanDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\EmiChange\frmEmiChange.Designer.vb">
+      <DependentUpon>frmEmiChange.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\EmiChange\frmEmiChange.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\EmiChange\frmEMI_ChangeDetails.Designer.vb">
+      <DependentUpon>frmEMI_ChangeDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\EmiChange\frmEMI_ChangeDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\frmMemberLoanDetails.Designer.vb">
+      <DependentUpon>frmMemberLoanDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\frmMemberLoanDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmLoan.Designer.vb">
+      <DependentUpon>frmLoan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmLoan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmLoanDetails.Designer.vb">
+      <DependentUpon>frmLoanDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmLoanDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareRefund.Designer.vb">
+      <DependentUpon>rptShareRefund.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareRefund.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareClossing.Designer.vb">
+      <DependentUpon>rptShareClossing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareClossing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareCollection.Designer.vb">
+      <DependentUpon>rptShareCollection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareCollection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareDeposit.Designer.vb">
+      <DependentUpon>rptShareDeposit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareDeposit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptTrailBalance.Designer.vb">
+      <DependentUpon>rptTrailBalance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptTrailBalance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptTDRefund.Designer.vb">
+      <DependentUpon>rptTDRefund.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptTDRefund.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptTDClossing.Designer.vb">
+      <DependentUpon>rptTDClossing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptTDClossing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\frmMemberLoan.Designer.vb">
+      <DependentUpon>frmMemberLoan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\frmMemberLoan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\frmShareClossing.Designer.vb">
+      <DependentUpon>frmShareClossing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\frmShareClossing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\frmShareClossingDetails.Designer.vb">
+      <DependentUpon>frmShareClossingDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\frmShareClossingDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\frmShareDivident.Designer.vb">
+      <DependentUpon>frmShareDivident.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\frmShareDivident.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\frmShareDividentDetails.Designer.vb">
+      <DependentUpon>frmShareDividentDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\frmShareDividentDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\frmShareDeposit.Designer.vb">
+      <DependentUpon>frmShareDeposit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\frmShareDeposit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\frmTDInterestDetails.Designer.vb">
+      <DependentUpon>frmTDInterestDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\frmTDInterestDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\frmTDInterest.Designer.vb">
+      <DependentUpon>frmTDInterest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\frmTDInterest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\frmTDClossingDetails.Designer.vb">
+      <DependentUpon>frmTDClossingDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\frmTDClossingDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptTDCollection.Designer.vb">
+      <DependentUpon>rptTDCollection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptTDCollection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptLedgerabstract.Designer.vb">
+      <DependentUpon>rptLedgerabstract.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptLedgerabstract.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptDemandList.Designer.vb">
+      <DependentUpon>rptDemandList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptDemandList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\frmTDClossing.Designer.vb">
+      <DependentUpon>frmTDClossing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\frmTDClossing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\frmThriftDeposit.Designer.vb">
+      <DependentUpon>frmThriftDeposit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\frmThriftDeposit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\frmThriftDepositGroup.Designer.vb">
+      <DependentUpon>frmThriftDepositGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\frmThriftDepositGroup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\Loan Collection\frmWorkerLoanCollection.Designer.vb">
+      <DependentUpon>frmWorkerLoanCollection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\Loan Collection\frmWorkerLoanCollection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\Loan Collection\frmStaffLoanCollection.Designer.vb">
+      <DependentUpon>frmStaffLoanCollection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\Loan Collection\frmStaffLoanCollection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\Loan Demand\frmWorkerDemandAlter.Designer.vb">
+      <DependentUpon>frmWorkerDemandAlter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\Loan Demand\frmWorkerDemandAlter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\Loan Demand\frmStaffDemandAlter.Designer.vb">
+      <DependentUpon>frmStaffDemandAlter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\Loan Demand\frmStaffDemandAlter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\Loan Demand\frmWorkersLoanDemand.Designer.vb">
+      <DependentUpon>frmWorkersLoanDemand.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\Loan Demand\frmWorkersLoanDemand.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\Loan Demand\frmStaffLoanDemand.Designer.vb">
+      <DependentUpon>frmStaffLoanDemand.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\Loan Demand\frmStaffLoanDemand.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\UpdationLock\frmUpdationLock.Designer.vb">
+      <DependentUpon>frmUpdationLock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\UpdationLock\frmUpdationLock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form\CompanySelection.Designer.vb">
+      <DependentUpon>CompanySelection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\CompanySelection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmYearEndProcess.Designer.vb">
+      <DependentUpon>frmYearEndProcess.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmYearEndProcess.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\RegistrationForm.Designer.vb">
+      <DependentUpon>RegistrationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\RegistrationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmCompanyEdit.Designer.vb">
+      <DependentUpon>frmCompanyEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmCompanyEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmCompany.Designer.vb">
+      <DependentUpon>frmCompany.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmCompany.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmCompanyDetails.Designer.vb">
+      <DependentUpon>frmCompanyDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmCompanyDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmGroup.Designer.vb">
+      <DependentUpon>frmGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmGroup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmGroupDetails.Designer.vb">
+      <DependentUpon>frmGroupDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmGroupDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmHead.Designer.vb">
+      <DependentUpon>frmHead.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmHead.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmHeadDetails.Designer.vb">
+      <DependentUpon>frmHeadDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmHeadDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmMemberDetails.Designer.vb">
+      <DependentUpon>frmMemberDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmMemberDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmMember.Designer.vb">
+      <DependentUpon>frmMember.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmMember.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmState.Designer.vb">
+      <DependentUpon>frmState.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmState.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmStateDetails.Designer.vb">
+      <DependentUpon>frmStateDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmStateDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmUser.Designer.vb">
+      <DependentUpon>frmUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Master\frmUserDetails.Designer.vb">
+      <DependentUpon>frmUserDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Master\frmUserDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Master\rptHeadList.Designer.vb">
+      <DependentUpon>rptHeadList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Master\rptHeadList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Master\rptGroupList.Designer.vb">
+      <DependentUpon>rptGroupList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Master\rptGroupList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Master\rptMemberList.Designer.vb">
+      <DependentUpon>rptMemberList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Master\rptMemberList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptMonthlyRD.Designer.vb">
+      <DependentUpon>rptMonthlyRD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptMonthlyRD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptLedgerBook.Designer.vb">
+      <DependentUpon>rptLedgerBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptLedgerBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptDayBook.Designer.vb">
+      <DependentUpon>rptDayBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reports\RDLCvb\Transaction\Accounts\rptDayBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Transaction\frmVoucherEntry.Designer.vb">
+      <DependentUpon>frmVoucherEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Transaction\frmVoucherEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\Class\Class1.vb" />
+    <Compile Include="Module\Class\clsCompanyDetails.vb" />
+    <Compile Include="Module\MainModule.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form\CompanySelection.resx">
+      <DependentUpon>CompanySelection.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmUserRights.resx">
+      <DependentUpon>frmUserRights.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareDivident.resx">
+      <DependentUpon>rptShareDivident.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\LoanDemand\frmLoanCollection.resx">
+      <DependentUpon>frmLoanCollection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\LoanDemand\frmLoanDemand.resx">
+      <DependentUpon>frmLoanDemand.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptSharePassBook.resx">
+      <DependentUpon>rptSharePassBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptTDPassBook.resx">
+      <DependentUpon>rptTDPassBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptLoanDemand.resx">
+      <DependentUpon>rptLoanDemand.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptLoanPassBook.resx">
+      <DependentUpon>rptLoanPassBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Member Loan\rptLoanDetails.resx">
+      <DependentUpon>rptLoanDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptShareDivident_IndividualPrint.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptShareDivident.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\LoanDemand\rptLoanCollection_CompanyReceiptWise.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\LoanDemand\rptLoanCollection_LoanNameWise.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\LoanDemand\rptLoanCollection_DemandTypeWise.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\LoanDemand\rptLoanDemand_LoanName.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\LoanDemand\rptLoanDemand_Short.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\LoanDemand\rptLoanDemand.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Member Loan\rptFRSharePassBook.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Member Loan\rptShare_PassBook.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Member Loan\rptTD_PassBook.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Member Loan\rptFRLoanPassBook.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Member Loan\rptLoanPassBook.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Member Loan\rptMemberLoanList.rdlc" />
+    <EmbeddedResource Include="Form\Transaction\EmiChange\frmEmiChange.resx">
+      <DependentUpon>frmEmiChange.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\EmiChange\frmEMI_ChangeDetails.resx">
+      <DependentUpon>frmEMI_ChangeDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\frmMemberLoanDetails.resx">
+      <DependentUpon>frmMemberLoanDetails.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmLoan.resx">
+      <DependentUpon>frmLoan.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmLoanDetails.resx">
+      <DependentUpon>frmLoanDetails.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareRefund.resx">
+      <DependentUpon>rptShareRefund.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareClossing.resx">
+      <DependentUpon>rptShareClossing.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareCollection.resx">
+      <DependentUpon>rptShareCollection.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Accounts\rptShareDeposit.resx">
+      <DependentUpon>rptShareDeposit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Accounts\rptTrailBalance.resx">
+      <DependentUpon>rptTrailBalance.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Accounts\rptTDRefund.resx">
+      <DependentUpon>rptTDRefund.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Accounts\rptTDClossing.resx">
+      <DependentUpon>rptTDClossing.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptShareRefund.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptShareClossing.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptShareCollection.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptTrialBalanceGroup.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptTrialBalance.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptYearlyRDGroup.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptTDRefund.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptTDClossing.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptYearlyRD.rdlc" />
+    <EmbeddedResource Include="Form\Transaction\frmMemberLoan.resx">
+      <DependentUpon>frmMemberLoan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\frmShareClossing.resx">
+      <DependentUpon>frmShareClossing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\frmShareClossingDetails.resx">
+      <DependentUpon>frmShareClossingDetails.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\frmShareDivident.resx">
+      <DependentUpon>frmShareDivident.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\frmShareDividentDetails.resx">
+      <DependentUpon>frmShareDividentDetails.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\frmShareDeposit.resx">
+      <DependentUpon>frmShareDeposit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\frmTDInterestDetails.resx">
+      <DependentUpon>frmTDInterestDetails.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\frmTDInterest.resx">
+      <DependentUpon>frmTDInterest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\frmTDClossingDetails.resx">
+      <DependentUpon>frmTDClossingDetails.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmYearEndProcess.resx">
+      <DependentUpon>frmYearEndProcess.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmCompanyEdit.resx">
+      <DependentUpon>frmCompanyEdit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmCompany.resx">
+      <DependentUpon>frmCompany.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmCompanyDetails.resx">
+      <DependentUpon>frmCompanyDetails.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmGroup.resx">
+      <DependentUpon>frmGroup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmGroupDetails.resx">
+      <DependentUpon>frmGroupDetails.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmHead.resx">
+      <DependentUpon>frmHead.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmHeadDetails.resx">
+      <DependentUpon>frmHeadDetails.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmMemberDetails.resx">
+      <DependentUpon>frmMemberDetails.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmMember.resx">
+      <DependentUpon>frmMember.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmState.resx">
+      <DependentUpon>frmState.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmStateDetails.resx">
+      <DependentUpon>frmStateDetails.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmUser.resx">
+      <DependentUpon>frmUser.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Master\frmUserDetails.resx">
+      <DependentUpon>frmUserDetails.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Master\rptHeadList.resx">
+      <DependentUpon>rptHeadList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Master\rptGroupList.resx">
+      <DependentUpon>rptGroupList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Master\rptMemberList.resx">
+      <DependentUpon>rptMemberList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\DBReceipt.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Accounts\rptTDCollection.resx">
+      <DependentUpon>rptTDCollection.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Accounts\rptLedgerabstract.resx">
+      <DependentUpon>rptLedgerabstract.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Accounts\rptDemandList.resx">
+      <DependentUpon>rptDemandList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Accounts\rptMonthlyRD.resx">
+      <DependentUpon>rptMonthlyRD.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Accounts\rptLedgerBook.resx">
+      <DependentUpon>rptLedgerBook.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLCvb\Transaction\Accounts\rptDayBook.resx">
+      <DependentUpon>rptDayBook.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reports\RDLC\Master\rptHeadList.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Master\rptGroupList.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Master\rptMemberList.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Testing\MainReport.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Testing\SubReport1.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptDayBook.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptTDCollection.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptLedgerAbstract.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptRD.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptMonthlyRD.rdlc" />
+    <EmbeddedResource Include="Form\Reports\RDLC\Transaction\Accounts\rptLedgerBook.rdlc" />
+    <EmbeddedResource Include="Form\Transaction\frmTDClossing.resx">
+      <DependentUpon>frmTDClossing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\frmThriftDeposit.resx">
+      <DependentUpon>frmThriftDeposit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\frmThriftDepositGroup.resx">
+      <DependentUpon>frmThriftDepositGroup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\frmVoucherEntry.resx">
+      <DependentUpon>frmVoucherEntry.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\Loan Collection\frmWorkerLoanCollection.resx">
+      <DependentUpon>frmWorkerLoanCollection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\Loan Collection\frmStaffLoanCollection.resx">
+      <DependentUpon>frmStaffLoanCollection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\Loan Demand\frmWorkerDemandAlter.resx">
+      <DependentUpon>frmWorkerDemandAlter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\Loan Demand\frmStaffDemandAlter.resx">
+      <DependentUpon>frmStaffDemandAlter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\Loan Demand\frmWorkersLoanDemand.resx">
+      <DependentUpon>frmWorkersLoanDemand.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Transaction\Loan Demand\frmStaffLoanDemand.resx">
+      <DependentUpon>frmStaffLoanDemand.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\UpdationLock\frmUpdationLock.resx">
+      <DependentUpon>frmUpdationLock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
+    <None Include="Resources\Caption.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+    <None Include="Resources\Backround.JPG" />
+    <Content Include="Resources\button_cancel.png" />
+    <Content Include="Resources\FILECOPY.AVI" />
+    <Content Include="Resources\horse.jpg" />
+    <None Include="Resources\K7back.JPG" />
+    <Content Include="Resources\RptLogo.jpg" />
+    <None Include="Resources\sss-2.jpg" />
+    <Content Include="Resources\save_accept1.png" />
+    <Content Include="Resources\SSS1.jpg" />
+    <None Include="Resources\white.jpg" />
+    <None Include="Resources\SSS.jpg" />
+    <None Include="rptDataSet.xsc">
+      <DependentUpon>rptDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="rptDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rptDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="rptDataSet.xss">
+      <DependentUpon>rptDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\W95MBX01.ICO" />
+    <None Include="Resources\KEY04.ICO" />
+    <None Include="Resources\DISK04.ICO" />
+    <None Include="Resources\H6.bmp" />
+    <None Include="Resources\H5.bmp" />
+    <None Include="Resources\H4.bmp" />
+    <None Include="Resources\H3.bmp" />
+    <None Include="Resources\picture5.jpg" />
+    <None Include="Resources\picture12.jpg" />
+    <None Include="Resources\picture13.jpg" />
+    <None Include="Resources\picture15.jpg" />
+    <None Include="Resources\picture1.jpg" />
+    <None Include="Resources\picture3.jpg" />
+    <None Include="Resources\picture4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Form\Reports\RDLCvb\Testing\" />
+    <Folder Include="Form\Reports\RDLCvb\Transaction\LoanCollection\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

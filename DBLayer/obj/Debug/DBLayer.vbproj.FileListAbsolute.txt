@@ -1,0 +1,143 @@
+E:\Prabhu\DMS\DMS V2.1\DMS\DBLayer\bin\Debug\DBLayer.dll
+E:\Prabhu\DMS\DMS V2.1\DMS\DBLayer\bin\Debug\DBLayer.pdb
+E:\Prabhu\DMS\DMS V2.1\DMS\DBLayer\bin\Debug\DBLayer.xml
+E:\Prabhu\DMS\DMS V2.1\DMS\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+E:\Prabhu\DMS\DMS V2.1\DMS\DBLayer\obj\Debug\DBLayer.Resources.resources
+E:\Prabhu\DMS\DMS V2.1\DMS\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+E:\Prabhu\DMS\DMS V2.1\DMS\DBLayer\obj\Debug\DBLayer.dll
+E:\Prabhu\DMS\DMS V2.1\DMS\DBLayer\obj\Debug\DBLayer.xml
+E:\Prabhu\DMS\DMS V2.1\DMS\DBLayer\obj\Debug\DBLayer.pdb
+D:\SWAS\BALA.CS\sDMS\sDMS V2.2\DMS\DBLayer\bin\Debug\DBLayer.dll
+D:\SWAS\BALA.CS\sDMS\sDMS V2.2\DMS\DBLayer\bin\Debug\DBLayer.pdb
+D:\SWAS\BALA.CS\sDMS\sDMS V2.2\DMS\DBLayer\bin\Debug\DBLayer.xml
+D:\SWAS\BALA.CS\sDMS\sDMS V2.2\DMS\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\SWAS\BALA.CS\sDMS\sDMS V2.2\DMS\DBLayer\obj\Debug\DBLayer.Resources.resources
+D:\SWAS\BALA.CS\sDMS\sDMS V2.2\DMS\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+D:\SWAS\BALA.CS\sDMS\sDMS V2.2\DMS\DBLayer\obj\Debug\DBLayer.dll
+D:\SWAS\BALA.CS\sDMS\sDMS V2.2\DMS\DBLayer\obj\Debug\DBLayer.xml
+D:\SWAS\BALA.CS\sDMS\sDMS V2.2\DMS\DBLayer\obj\Debug\DBLayer.pdb
+D:\sDMS V2.2\DMS\DBLayer\bin\Debug\DBLayer.dll
+D:\sDMS V2.2\DMS\DBLayer\bin\Debug\DBLayer.pdb
+D:\sDMS V2.2\DMS\DBLayer\bin\Debug\DBLayer.xml
+D:\sDMS V2.2\DMS\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\sDMS V2.2\DMS\DBLayer\obj\Debug\DBLayer.Resources.resources
+D:\sDMS V2.2\DMS\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+D:\sDMS V2.2\DMS\DBLayer\obj\Debug\DBLayer.dll
+D:\sDMS V2.2\DMS\DBLayer\obj\Debug\DBLayer.xml
+D:\sDMS V2.2\DMS\DBLayer\obj\Debug\DBLayer.pdb
+E:\Prabhu\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.dll
+E:\Prabhu\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.pdb
+E:\Prabhu\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.xml
+E:\Prabhu\Shreya\Shreya\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+E:\Prabhu\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.Resources.resources
+E:\Prabhu\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+E:\Prabhu\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.dll
+E:\Prabhu\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.xml
+E:\Prabhu\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.pdb
+D:\Soft\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.dll
+D:\Soft\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.pdb
+D:\Soft\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.xml
+D:\Soft\Shreya\Shreya\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\Soft\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.Resources.resources
+D:\Soft\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+D:\Soft\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.dll
+D:\Soft\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.xml
+D:\Soft\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.pdb
+I:\09072011\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.dll
+I:\09072011\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.pdb
+I:\09072011\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.xml
+I:\09072011\Shreya\Shreya\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+I:\09072011\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.Resources.resources
+I:\09072011\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+I:\09072011\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.dll
+I:\09072011\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.xml
+I:\09072011\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.pdb
+D:\SWAS\Shreya\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.dll
+D:\SWAS\Shreya\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.pdb
+D:\SWAS\Shreya\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.xml
+D:\SWAS\Shreya\Shreya\Shreya\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\SWAS\Shreya\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.Resources.resources
+D:\SWAS\Shreya\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+D:\SWAS\Shreya\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.dll
+D:\SWAS\Shreya\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.xml
+D:\SWAS\Shreya\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.pdb
+D:\SWAS\Shreya\Shreya\Shreya\Shreya\bin\Debug\DBLayer.dll
+D:\SWAS\Shreya\Shreya\Shreya\Shreya\bin\Debug\DBLayer.pdb
+D:\SWAS\Shreya\Shreya\Shreya\Shreya\bin\Debug\DBLayer.xml
+D:\SWAS\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.dll
+D:\SWAS\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.pdb
+D:\SWAS\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.xml
+D:\SWAS\Shreya\Shreya\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\SWAS\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.Resources.resources
+D:\SWAS\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+D:\SWAS\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.dll
+D:\SWAS\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.xml
+D:\SWAS\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.pdb
+I:\swas\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.dll
+I:\swas\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.pdb
+I:\swas\Shreya\Shreya\DBLayer\bin\Debug\DBLayer.xml
+I:\swas\Shreya\Shreya\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+I:\swas\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.Resources.resources
+I:\swas\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+I:\swas\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.dll
+I:\swas\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.xml
+I:\swas\Shreya\Shreya\DBLayer\obj\Debug\DBLayer.pdb
+D:\SWAS\Dairy\Dairy\Dairy\bin\Debug\DBLayer.dll
+D:\SWAS\Dairy\Dairy\Dairy\bin\Debug\DBLayer.pdb
+D:\SWAS\Dairy\Dairy\Dairy\bin\Debug\DBLayer.xml
+D:\Swas\Dairy\Dairy\DBLayer\bin\Debug\DBLayer.pdb
+D:\Swas\Dairy\Dairy\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\Swas\Dairy\Dairy\DBLayer\obj\Debug\DBLayer.Resources.resources
+D:\Swas\Dairy\Dairy\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+D:\Swas\Dairy\Dairy\DBLayer\obj\Debug\DBLayer.dll
+D:\Swas\Dairy\Dairy\DBLayer\obj\Debug\DBLayer.pdb
+D:\Swas\Dairy\Dairy\DBLayer\bin\Debug\DBLayer.xml
+D:\Swas\Dairy\Dairy\DBLayer\obj\Debug\DBLayer.xml
+D:\Swas\Dairy\DBLayer\bin\Debug\DBLayer.pdb
+D:\Swas\Dairy\DBLayer\bin\Debug\DBLayer.xml
+D:\SWAS\Dairy\DBLayer\bin\Release\DBLayer.pdb
+D:\SWAS\Dairy\DBLayer\bin\Release\DBLayer.xml
+D:\SWAS\Dairy\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\SWAS\Dairy\DBLayer\obj\Debug\DBLayer.Resources.resources
+D:\SWAS\Dairy\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+D:\SWAS\Dairy\DBLayer\obj\Debug\DBLayer.dll
+D:\SWAS\Dairy\DBLayer\obj\Debug\DBLayer.xml
+D:\SWAS\Dairy\DBLayer\obj\Debug\DBLayer.pdb
+G:\SWAS\SWAS\Dairy\DBLayer\bin\Release\DBLayer.pdb
+G:\SWAS\SWAS\Dairy\DBLayer\bin\Release\DBLayer.xml
+G:\SWAS\SWAS\Dairy\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+G:\SWAS\SWAS\Dairy\DBLayer\obj\Debug\DBLayer.Resources.resources
+G:\SWAS\SWAS\Dairy\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+G:\SWAS\SWAS\Dairy\DBLayer\obj\Debug\DBLayer.dll
+G:\SWAS\SWAS\Dairy\DBLayer\obj\Debug\DBLayer.xml
+G:\SWAS\SWAS\Dairy\DBLayer\obj\Debug\DBLayer.pdb
+G:\SWAS\SWAS\LMW\DBLayer\bin\Release\DBLayer.pdb
+G:\SWAS\SWAS\LMW\DBLayer\bin\Release\DBLayer.xml
+G:\SWAS\SWAS\LMW\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+G:\SWAS\SWAS\LMW\DBLayer\obj\Debug\DBLayer.Resources.resources
+G:\SWAS\SWAS\LMW\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+G:\SWAS\SWAS\LMW\DBLayer\obj\Debug\DBLayer.dll
+G:\SWAS\SWAS\LMW\DBLayer\obj\Debug\DBLayer.xml
+G:\SWAS\SWAS\LMW\DBLayer\obj\Debug\DBLayer.pdb
+D:\SWAS\LMW\DBLayer\bin\Debug\DBLayer.pdb
+D:\SWAS\LMW\DBLayer\bin\Debug\DBLayer.xml
+D:\SWAS\LMW\DBLayer\bin\Debug\DBLayer.dll.CodeAnalysisLog.xml
+D:\SWAS\LMW\DBLayer\bin\Debug\DBLayer.dll.lastcodeanalysissucceeded
+D:\SWAS\LMW\DBLayer\bin\Release\DBLayer.pdb
+D:\SWAS\LMW\DBLayer\bin\Release\DBLayer.xml
+D:\SWAS\LMW\LMW\bin\Debug\DBLayer.pdb
+D:\SWAS\LMW\LMW\bin\Debug\DBLayer.xml
+D:\SWAS\LMW\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\SWAS\LMW\DBLayer\obj\Debug\DBLayer.Resources.resources
+D:\SWAS\LMW\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+D:\SWAS\LMW\DBLayer\obj\Debug\DBLayer.dll
+D:\SWAS\LMW\DBLayer\obj\Debug\DBLayer.xml
+D:\SWAS\LMW\DBLayer\obj\Debug\DBLayer.pdb
+D:\Srichu\LMW\LMW\bin\Debug\DBLayer.pdb
+D:\Srichu\LMW\LMW\bin\Debug\DBLayer.xml
+D:\Srichu\LMW\DBLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\Srichu\LMW\DBLayer\obj\Debug\DBLayer.Resources.resources
+D:\Srichu\LMW\DBLayer\obj\Debug\DBLayer.vbproj.GenerateResource.Cache
+D:\Srichu\LMW\DBLayer\obj\Debug\DBLayer.dll
+D:\Srichu\LMW\DBLayer\obj\Debug\DBLayer.xml
+D:\Srichu\LMW\DBLayer\obj\Debug\DBLayer.pdb
